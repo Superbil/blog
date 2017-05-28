@@ -1,7 +1,7 @@
 baseURL: "https://blog.superbil.org/"
 title: "Superbil.nil"
 publishDir: "docs"
-theme: "zen"
+theme: "beautifulhugo"
 googleAnalytics: ""
 languageCode: "zh-tw"
 
