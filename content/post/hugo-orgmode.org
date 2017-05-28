@@ -1,0 +1,32 @@
+---
+author: "Superbil"
+date: "2017-05-29T03:11:08+08:00"
+slug: "hugo-with-orgmode"
+isCJKLanguage: true
+tags: ["test",""]
+title: "Hugo with org-mode"
+description: "Something in first one test of org"
+---
+
+* Just first level
+
+Something in first one
+
+** second level
+#+BEGIN_SRC lisp
+(message "hello hugo with org block")
+(exit 1)
+#+END_SRC
+
+* 測試結果
+
+- 看來是要吃 `+++` 裡面的自定義字串而已，好弱。
+
+- 程式碼第一行會有空白，看來是 bug
+
+- [ ] 中文字型要再自定義過
+
+
+* TODO I have something todo
+
+該死的 TODO 沒拿掉…沒做的事情好多
