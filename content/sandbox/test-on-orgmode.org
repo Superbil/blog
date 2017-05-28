@@ -3,9 +3,10 @@ author: "Superbil"
 date: "2017-05-29T03:11:08+08:00"
 slug: "hugo-with-orgmode"
 isCJKLanguage: true
-tags: ["test",""]
-title: "Hugo with org-mode"
+tags: ["sandbox",""]
+title: "Test on org-mode"
 description: "Something in first one test of org"
+draft: true
 ---
 
 * Just first level

@@ -2,9 +2,10 @@
 author = "Superbil"
 date = "2017-05-29T02:57:41+08:00"
 slug = ""
-tags = ["test",""]
-title = "Hello Hugo"
-
+tags = ["sandbox",""]
+title = "Test on Markdown"
+draft = true
+lang = "zh"
 +++
 
 
