@@ -1,10 +1,6 @@
-+++
-date = "2017-05-29T02:10:41+08:00"
-title = "About"
-+++
+#+TITLE: About
+#+DATE: 2017-05-29T02:10:41+08:00
 
 Superbil.nil = [Superbil nil]
 
-I am freelance.
-
-This is my blog, powered by [[https://gohugo.io/][hugo]].
+空無一物
