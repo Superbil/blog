@@ -1,13 +1,9 @@
----
-author: "Superbil"
-date: "2017-05-29T03:11:08+08:00"
-slug: "hugo-with-orgmode"
-isCJKLanguage: true
-tags: ["sandbox",""]
-title: "Test on org-mode"
-description: "Something in first one test of org"
-draft: true
----
+#+TITLE: Test on org-mode
+#+description: "Something in first one test of org"
+#+DATE: 2017-05-29T03:11:08+08:00
+#+SLUG: "hugo-with-orgmode"
+#+TAGS: sandbox,
+#+DRAFT: true
 
 * Just first level
 
