@@ -1,0 +1,55 @@
+#+TITLE: 設定 hugo 和 org-mode
+#+DATE: 2017-05-29T06:37:54+08:00
+#+SLUG: setup-hugo-with-orgmode
+#+TAGS: hugo org-mode
+#+description: 設定 hugo 而且用 org-mode 當作來源
+
+設定 hugo 而且用 org-mode 當作來源
+
+** 如何做
+
++ 安裝 hugo
+#+BEGIN_SRC sh
+brew install hugo
+#+END_SRC
+
++ 開新專案
+#+BEGIN_SRC sh
+hugo new site blog
+#+END_SRC
+
++ 安裝佈景
+
+  我用 git submodule 來解決這個記錄
+
+#+BEGIN_SRC sh
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
+#+END_SRC
+
++ 建立新文章
+#+BEGIN_SRC sh
+hugo new post/new-post.org
+#+END_SRC
+
++ 產生網站
+#+BEGIN_SRC sh
+hugo
+#+END_SRC
+
+目前使用 =hugo v0.21= 版, 可以直接吃 org 檔，範例如下：
+
+#+BEGIN_SRC org-mode
+#+TITLE: 設定 hugo 和 org-mode
+#+DATE: 2017-05-29T09:4:78+08:00
+#+SLUG: setup-hugo-with-orgmode
+#+TAGS: hugo org-mode
+
+文章內容… balabala
+#+END_SRC
+
+本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+像是 title 就是在 =#+= 之後的字，這個就會拿去當作區域變數來使用
+
+因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
+
+不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。
