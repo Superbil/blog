@@ -6,87 +6,32 @@
     <description>Recent content on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <copyright>This site is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License] (https://creativecommons.org/licenses/by-sa/4.0/).</copyright>
-    <lastBuildDate>Mon, 29 May 2017 03:11:08 +0800</lastBuildDate>
-    <atom:link href="https://blog.superbil.org/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)</copyright>
+    <lastBuildDate>Mon, 29 May 2017 06:37:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.superbil.org/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>Hugo with org-mode</title>
-      <link>https://blog.superbil.org/post/hugo-with-orgmode/</link>
-      <pubDate>Mon, 29 May 2017 03:11:08 +0800</pubDate>
-      <guid>https://blog.superbil.org/post/hugo-with-orgmode/</guid>
-      <description>&lt;h1 id=&#34;just-first-level&#34;&gt;Just first level&lt;/h1&gt;
-
-&lt;p&gt;Something in first one&lt;/p&gt;
-
-&lt;h2 id=&#34;second-level&#34;&gt;second level&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;
-(message &amp;quot;hello hugo with org block&amp;quot;)
-(exit 1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;測試結果&#34;&gt;測試結果&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;看來是要吃 `+++` 裡面的自定義字串而已，好弱。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul&gt;
-&lt;li&gt;程式碼第一行會有空白，看來是 bug&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 中文字型要再自定義過&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;i-have-something-todo&#34;&gt;&lt;span class=&#34;todo TODO&#34;&gt;TODO&lt;/span&gt; I have something todo&lt;/h1&gt;
-
-&lt;p&gt;該死的 TODO 沒拿掉…沒做的事情好多&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello Hugo</title>
-      <link>https://blog.superbil.org/post/first/</link>
-      <pubDate>Mon, 29 May 2017 02:57:41 +0800</pubDate>
-      <guid>https://blog.superbil.org/post/first/</guid>
-      <description>
-
-&lt;h2 id=&#34;second&#34;&gt;Second&lt;/h2&gt;
-
-&lt;p&gt;I have something to say.&lt;/p&gt;
-
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Shell&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server --buildDrafts
-hugo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lisp&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(message &amp;quot;Hello hugo&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <title>設定 hugo 和 org-mode</title>
+      <link>https://blog.superbil.org/post/setup-hugo-with-orgmode/</link>
+      <pubDate>Mon, 29 May 2017 06:37:54 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/post/setup-hugo-with-orgmode/</guid>
+      <description>設定 hugo 而且用 org-mode 當作來源
+如何做  安裝 hugo  brew install hugo   開新專案  hugo new site blog   安裝佈景  我用 git submodule 來解決這個記錄
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo   建立新文章  hugo new post/new-post.org   產生網站  hugo  目前使用 hugo v0.21 版, 可以直接吃 org 檔，範例如下：
+#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala  本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用</description>
     </item>
     
     <item>
       <title>About</title>
       <link>https://blog.superbil.org/about/</link>
       <pubDate>Mon, 29 May 2017 02:10:41 +0800</pubDate>
+      
       <guid>https://blog.superbil.org/about/</guid>
-      <description>&lt;p&gt;Superbil.nil = [Superbil nil]&lt;/p&gt;
-
-&lt;p&gt;I am freelance.&lt;/p&gt;
-
-&lt;p&gt;This is my blog, powered by &lt;a href=&#34;https://gohugo.io/&#34; title=&#34;hugo&#34;&gt;hugo&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Superbil.nil = [Superbil nil]
+空無一物</description>
     </item>
     
   </channel>

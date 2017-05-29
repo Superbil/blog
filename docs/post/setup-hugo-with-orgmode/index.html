@@ -5,17 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>設定 hugo 和 org-mode</title>
+  <meta property="og:title" content="設定 hugo 和 org-mode" />
+  <meta name="twitter:title" content="設定 hugo 和 org-mode" />
+  <meta name="description" content="設定 hugo 而且用 org-mode 當作來源">
+  <meta property="og:description" content="設定 hugo 而且用 org-mode 當作來源">
+  <meta name="twitter:description" content="設定 hugo 而且用 org-mode 當作來源">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://blog.superbil.org/post/" />
+  <meta property="og:url" content="https://blog.superbil.org/post/setup-hugo-with-orgmode/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Superbil.nil" />
 
   <meta name="generator" content="Hugo 0.21" />
-  <link rel="canonical" href="https://blog.superbil.org/post/" />
+  <link rel="canonical" href="https://blog.superbil.org/post/setup-hugo-with-orgmode/" />
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -71,14 +74,33 @@ ga('send', 'pageview');
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>設定 hugo 和 org-mode</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on May 29, 2017
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -86,50 +108,88 @@ ga('send', 'pageview');
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>設定 hugo 而且用 org-mode 當作來源</p>
+
+<h2 id="如何做">如何做</h2>
+
+<ul>
+<li>安裝 hugo</li>
+</ul>
+
+<pre><code class="language-sh">
+brew install hugo
+</code></pre>
+
+<ul>
+<li>開新專案</li>
+</ul>
+
+<pre><code class="language-sh">
+hugo new site blog
+</code></pre>
+
+<ul>
+<li>安裝佈景</li>
+</ul>
+
+<p>我用 git submodule 來解決這個記錄</p>
+
+<pre><code class="language-sh">
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
+</code></pre>
+
+<ul>
+<li>建立新文章</li>
+</ul>
+
+<pre><code class="language-sh">
+hugo new post/new-post.org
+</code></pre>
+
+<ul>
+<li>產生網站</li>
+</ul>
+
+<pre><code class="language-sh">
+hugo
+</code></pre>
+
+<p>目前使用 <code>hugo v0.21</code> 版, 可以直接吃 org 檔，範例如下：</p>
+
+<pre><code class="language-org-mode">
+#+TITLE: 設定 hugo 和 org-mode
+#+DATE: 2017-05-29T09:4:78+08:00
+#+SLUG: setup-hugo-with-orgmode
+#+TAGS: hugo org-mode
+
+文章內容… balabala
+</code></pre>
+
+<p>本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用</p>
+
+<p>因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的</p>
+
+<p>不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://blog.superbil.org/post/setup-hugo-with-orgmode/">
-                <h2 class="post-title">設定 hugo 和 org-mode</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on May 29, 2017
-              </p>
-              <div class="post-entry">
-                
-                  設定 hugo 而且用 org-mode 當作來源
-如何做  安裝 hugo  brew install hugo   開新專案  hugo new site blog   安裝佈景  我用 git submodule 來解決這個記錄
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo   建立新文章  hugo new post/new-post.org   產生網站  hugo  目前使用 hugo v0.21 版, 可以直接吃 org 檔，範例如下：
-#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala  本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用
-                  <a href="https://blog.superbil.org/post/setup-hugo-with-orgmode/" class="post-read-more">[Read More]</a>
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/hugo">hugo</a>&nbsp;
-                  
-                    #<a href="/tags/org-mode">org-mode</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
-          
-        </div>
         
-      </div>
+      </ul>
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
