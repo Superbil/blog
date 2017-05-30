@@ -36,7 +36,7 @@ hugo new post/new-post.org
 hugo
 #+END_SRC
 
-目前使用 =hugo v0.21= 版, 可以直接吃 org 檔，範例如下：
+目前使用 *hugo v0.21* 版, 可以直接吃 org 檔，範例如下：
 
 #+BEGIN_SRC org-mode
 #+TITLE: 設定 hugo 和 org-mode
@@ -48,7 +48,7 @@ hugo
 #+END_SRC
 
 本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
-像是 title 就是在 =#+= 之後的字，這個就會拿去當作區域變數來使用
+像是 title 就是在 ~#+~ 之後的字，這個就會拿去當作區域變數來使用
 
 因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
 
