@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xcode on Superbil.nil</title>
+    <link>https://blog.superbil.org/tags/xcode/</link>
+    <description>Recent content in Xcode on Superbil.nil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)</copyright>
+    <lastBuildDate>Thu, 07 Nov 2013 11:47:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.superbil.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sort Xcode project</title>
+      <link>https://blog.superbil.org/cocoa/sort-xcode-project-file-and-directory/</link>
+      <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/cocoa/sort-xcode-project-file-and-directory/</guid>
+      <description>I found this perl script can sort Xcode Project
+sort-Xcode-project-file
+just download it and run it
+$ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file $ chmod +x sort-Xcode-project-file $ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj  you need to change MyProject to you xcode project name</description>
+    </item>
+    
+  </channel>
+</rss>

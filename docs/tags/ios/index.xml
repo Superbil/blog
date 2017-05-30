@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on Superbil.nil</title>
+    <link>https://blog.superbil.org/tags/ios/</link>
+    <description>Recent content in Ios on Superbil.nil</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)</copyright>
+    <lastBuildDate>Wed, 05 Nov 2014 11:25:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.superbil.org/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>從 XIB 建立 UITableViewCell 的問題</title>
+      <link>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</link>
+      <pubDate>Wed, 05 Nov 2014 11:25:00 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</guid>
+      <description>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
+在 UITableView 的 viewDidLoad 裡面建立好相關的參照
+- (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;quot;MyTableViewCell&amp;quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&amp;quot;MyCell&amp;quot; forIndexPath:indexPath]; // do cell things ... return cell; }  然後執行之後會出錯，大概會看到像這樣的錯誤
+*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39;  原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException</description>
+    </item>
+    
+    <item>
+      <title>產生 lame for iOS</title>
+      <link>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</link>
+      <pubDate>Tue, 10 Dec 2013 17:05:00 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</guid>
+      <description>lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
+修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
+東西會產生在 build 這個資料夾之下
+PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比較高，所以就不再用其他語言實作
+目前已經 fork 到我的 Github project build-lame-for-iOS，可以直接 fork 使用</description>
+    </item>
+    
+    <item>
+      <title>iOS enter background</title>
+      <link>https://blog.superbil.org/cocoa/ios-enter-background/</link>
+      <pubDate>Thu, 05 Sep 2013 17:40:00 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/cocoa/ios-enter-background/</guid>
+      <description>If yout want to do something in background&amp;hellip;
+__block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });  </description>
+    </item>
+    
+  </channel>
+</rss>

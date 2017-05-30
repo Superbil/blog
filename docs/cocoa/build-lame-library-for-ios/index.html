@@ -5,17 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tags</title>
-  <meta property="og:title" content="Tags" />
-  <meta name="twitter:title" content="Tags" />
+  <title>產生 lame for iOS</title>
+  <meta property="og:title" content="產生 lame for iOS" />
+  <meta name="twitter:title" content="產生 lame for iOS" />
+  <meta name="description" content="lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
+修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
+東西會產生在 build 這個資料夾之下
+PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比較高，所以就不再用其他語言實作
+目前已經 fork 到我的 Github project build-lame-for-iOS，可以直接 fork 使用">
+  <meta property="og:description" content="lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
+修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
+東西會產生在 build 這個資料夾之下
+PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比較高，所以就不再用其他語言實作
+目前已經 fork 到我的 Github project build-lame-for-iOS，可以直接 fork 使用">
+  <meta name="twitter:description" content="lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
+修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
+東西會產生在 build 這個資料夾之下
+PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比較高， …">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://blog.superbil.org/tags/" />
+  <meta property="og:url" content="https://blog.superbil.org/cocoa/build-lame-library-for-ios/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Superbil.nil" />
 
   <meta name="generator" content="Hugo 0.21" />
-  <link rel="canonical" href="https://blog.superbil.org/tags/" />
+  <link rel="canonical" href="https://blog.superbil.org/cocoa/build-lame-library-for-ios/" />
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -87,8 +101,8 @@ ga('send', 'pageview');
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Tags</h1>
+            <div class="cocoa-heading">
+              <h1>產生 lame for iOS</h1>
                 
                 
             </div>
@@ -100,71 +114,40 @@ ga('send', 'pageview');
 
 
     
-  
-  <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式</p>
+
+<p>修正一些編譯上會遇到的問題，只要先去抓 <a href="http://lame.sourceforge.net/">lame</a> 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可</p>
+
+<p>東西會產生在 build 這個資料夾之下</p>
+
+<p>PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比較高，所以就不再用其他語言實作</p>
+
+<p>目前已經 fork 到我的 <a href="https://github.com/Superbil/build-lame-for-iOS">Github project build-lame-for-iOS</a>，可以直接 fork 使用</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://blog.superbil.org/cocoa/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://blog.superbil.org/cocoa/xcode-5-comment-mark/" data-toggle="tooltip" data-placement="top" title="XCode 5 註記">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
       
-      <a href="/tags/ios" class="list-group-item">
-          ios<span class="badge">3</span></a>
-      
-      <a href="/tags/xcode5" class="list-group-item">
-          xcode5<span class="badge">2</span></a>
-      
-      <a href="/tags/bash" class="list-group-item">
-          bash<span class="badge">1</span></a>
-      
-      <a href="/tags/build" class="list-group-item">
-          build<span class="badge">1</span></a>
-      
-      <a href="/tags/clang" class="list-group-item">
-          clang<span class="badge">1</span></a>
-      
-      <a href="/tags/cocoa" class="list-group-item">
-          cocoa<span class="badge">1</span></a>
-      
-      <a href="/tags/editor" class="list-group-item">
-          editor<span class="badge">1</span></a>
-      
-      <a href="/tags/homebrew" class="list-group-item">
-          homebrew<span class="badge">1</span></a>
-      
-      <a href="/tags/hugo" class="list-group-item">
-          hugo<span class="badge">1</span></a>
-      
-      <a href="/tags/launchctl" class="list-group-item">
-          launchctl<span class="badge">1</span></a>
-      
-      <a href="/tags/launchd" class="list-group-item">
-          launchd<span class="badge">1</span></a>
-      
-      <a href="/tags/lipo" class="list-group-item">
-          lipo<span class="badge">1</span></a>
-      
-      <a href="/tags/mac" class="list-group-item">
-          mac<span class="badge">1</span></a>
-      
-      <a href="/tags/org-mode" class="list-group-item">
-          org-mode<span class="badge">1</span></a>
-      
-      <a href="/tags/perl" class="list-group-item">
-          perl<span class="badge">1</span></a>
-      
-      <a href="/tags/rsync" class="list-group-item">
-          rsync<span class="badge">1</span></a>
-      
-      <a href="/tags/uitableview" class="list-group-item">
-          uitableview<span class="badge">1</span></a>
-      
-      <a href="/tags/xcode" class="list-group-item">
-          xcode<span class="badge">1</span></a>
-      
-      <a href="/tags/xib" class="list-group-item">
-          xib<span class="badge">1</span></a>
-      
-      </div>
-    </article>
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

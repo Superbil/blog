@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>從 XIB 建立 UITableViewCell 的問題</title>
+  <meta property="og:title" content="從 XIB 建立 UITableViewCell 的問題" />
+  <meta name="twitter:title" content="從 XIB 建立 UITableViewCell 的問題" />
+  <meta name="description" content="自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
+在 UITableView 的 viewDidLoad 裡面建立好相關的參照
+- (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&quot;MyTableViewCell&quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;MyCell&quot; forIndexPath:indexPath]; // do cell things ... return cell; }  然後執行之後會出錯，大概會看到像這樣的錯誤
+*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39;  原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException">
+  <meta property="og:description" content="自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
+在 UITableView 的 viewDidLoad 裡面建立好相關的參照
+- (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&quot;MyTableViewCell&quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;MyCell&quot; forIndexPath:indexPath]; // do cell things ... return cell; }  然後執行之後會出錯，大概會看到像這樣的錯誤
+*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39;  原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException">
+  <meta name="twitter:description" content="自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
+在 UITableView 的 viewDidLoad 裡面建立好相關的參照
+- (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&quot;MyTableViewCell&quot; …">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Superbil.nil" />
+
+  <meta name="generator" content="Hugo 0.21" />
+  <link rel="canonical" href="https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/" />
+  <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://blog.superbil.org/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.superbil.org/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" />
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-52601-22', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.superbil.org/">Superbil.nil</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="cocoa-heading">
+              <h1>從 XIB 建立 UITableViewCell 的問題</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell</p>
+
+<p>在 UITableView 的 <code>viewDidLoad</code> 裡面建立好相關的參照</p>
+
+<pre><code class="language-objc">- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self.tableView registerNib:[UINib nibWithNibName:@&quot;MyTableViewCell&quot;
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:cellIdentifier];
+}
+</code></pre>
+
+<p>再建立 cell 時候，大概像這樣使用</p>
+
+<pre><code class="language-objc">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;MyCell&quot; forIndexPath:indexPath];
+    // do cell things ...
+    return cell;
+}
+</code></pre>
+
+<p>然後執行之後會出錯，大概會看到像這樣的錯誤</p>
+
+<pre><code>*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116
+*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'
+</code></pre>
+
+<p>原因是使用 <code>dequeueReusableCellWithIdentifier:forIndexPath:</code> 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 <code>NSInternalInconsistencyException</code></p>
+
+<p>回頭發現自己的 XIB 的最頂層有兩個 View ，一個是正常的 UITableViewCell，另一個就只是 View，把另一 View 加到 UITableViewCell 裡面(或是刪除)就可以。</p>
+
+<p>另一種解決辦法就是不要使用 <code>[UITableView registerNib:forCellReuseIdentifier:]</code>, 用 <code>[UITableView dequeueReusableCellWithIdentifier:]</code> 來做資源的重用，然而建立 cell 的方式就換成 <code>[NSBundle loadNibNamed:owner:options:]</code>，把 XIB 建立起來之後，再檢查是不是自己想要的那個再丟出來</p>
+
+<pre><code class="language-objc">@interface UIView (Nib)
++ (instancetype)viewWithOwner:(id)owner;
+@end
+
+@implementation UIView (Nib)
++ (instancetype)viewWithOwner:(id)owner {
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:owner options:nil];
+    for (UIView *view in views) {
+        if ([view isKindOfClass:self]) {
+            return view;
+        }
+    }
+    return nil;
+}
+@end
+</code></pre>
+
+<p>然而，本來的 <code>tableView:cellForRowAtIndexPath</code> 就需要加上檢查 cell 是否有建立成功，若沒有就自己<strong>手動</strong>建立</p>
+
+<pre><code class="language-objc">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&quot;MyCell&quot;];
+    if (!cell) {
+   		cell = [MyCell viewWithOwner:self];
+    }
+    // do cell things ...
+    return cell;
+}
+</code></pre>
+
+<p>補充：</p>
+
+<p>使用自己從 XIB 建立 View 的方式，並不會呼叫 <code>initWithStyle:reuseIdentifier:</code> 這個，然後有些行為就會不正常，因此最好的辦法是把 XIB 修正正確。</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="https://blog.superbil.org/cocoa/xcode-5-comment-mark/" data-toggle="tooltip" data-placement="top" title="XCode 5 註記">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.superbil.org/">Superbil.nil</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.21</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://blog.superbil.org/js/main.js"></script>
+<script src="https://blog.superbil.org/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+  </body>
+</html>
+

@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tags</title>
-  <meta property="og:title" content="Tags" />
-  <meta name="twitter:title" content="Tags" />
+  <title>Launchd</title>
+  <meta property="og:title" content="Launchd" />
+  <meta name="twitter:title" content="Launchd" />
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://blog.superbil.org/tags/" />
+  <meta property="og:url" content="https://blog.superbil.org/tags/launchd/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Superbil.nil" />
 
   <meta name="generator" content="Hugo 0.21" />
-  <link rel="canonical" href="https://blog.superbil.org/tags/" />
+  <link rel="canonical" href="https://blog.superbil.org/tags/launchd/" />
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -71,26 +71,14 @@ ga('send', 'pageview');
 
 
     
-  
-  
-  
-
-
-
-
-  
-
   <header class="header-section ">
-    
     <div class="intro-header no-img">
-      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>Tags</h1>
-                
-                
+              <h1>#Launchd</h1>
+              <hr class="small">
             </div>
           </div>
         </div>
@@ -98,72 +86,55 @@ ga('send', 'pageview');
     </div>
   </header>
 
-
     
-  
   <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
-      
-      <a href="/tags/ios" class="list-group-item">
-          ios<span class="badge">3</span></a>
-      
-      <a href="/tags/xcode5" class="list-group-item">
-          xcode5<span class="badge">2</span></a>
-      
-      <a href="/tags/bash" class="list-group-item">
-          bash<span class="badge">1</span></a>
-      
-      <a href="/tags/build" class="list-group-item">
-          build<span class="badge">1</span></a>
-      
-      <a href="/tags/clang" class="list-group-item">
-          clang<span class="badge">1</span></a>
-      
-      <a href="/tags/cocoa" class="list-group-item">
-          cocoa<span class="badge">1</span></a>
-      
-      <a href="/tags/editor" class="list-group-item">
-          editor<span class="badge">1</span></a>
-      
-      <a href="/tags/homebrew" class="list-group-item">
-          homebrew<span class="badge">1</span></a>
-      
-      <a href="/tags/hugo" class="list-group-item">
-          hugo<span class="badge">1</span></a>
-      
-      <a href="/tags/launchctl" class="list-group-item">
-          launchctl<span class="badge">1</span></a>
-      
-      <a href="/tags/launchd" class="list-group-item">
-          launchd<span class="badge">1</span></a>
-      
-      <a href="/tags/lipo" class="list-group-item">
-          lipo<span class="badge">1</span></a>
-      
-      <a href="/tags/mac" class="list-group-item">
-          mac<span class="badge">1</span></a>
-      
-      <a href="/tags/org-mode" class="list-group-item">
-          org-mode<span class="badge">1</span></a>
-      
-      <a href="/tags/perl" class="list-group-item">
-          perl<span class="badge">1</span></a>
-      
-      <a href="/tags/rsync" class="list-group-item">
-          rsync<span class="badge">1</span></a>
-      
-      <a href="/tags/uitableview" class="list-group-item">
-          uitableview<span class="badge">1</span></a>
-      
-      <a href="/tags/xcode" class="list-group-item">
-          xcode<span class="badge">1</span></a>
-      
-      <a href="/tags/xib" class="list-group-item">
-          xib<span class="badge">1</span></a>
-      
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="https://blog.superbil.org/post/launchd-backup-with-rsync/">
+                <h2 class="post-title">使用 rsync 和 launchd 自動備份</h2>
+    
+                
+              </a>
+    
+              <p class="post-meta">
+                Posted on May 15, 2014
+              </p>
+              <div class="post-entry">
+                
+                  備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
+基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
+經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
+rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/  在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
+依照官方說明，我就做了一個這樣的 plist 出來
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt; &lt;plist version=&quot;1.0&quot;&gt; &lt;dict&gt; &lt;key&gt;Debug&lt;/key&gt; &lt;true/&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;org.superbil.rsync&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;/usr/bin/rsync&lt;/string&gt; &lt;string&gt;-auzthv&lt;/string&gt; &lt;string&gt;--delete-after&lt;/string&gt; &lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt; &lt;string&gt;project/&lt;/string&gt; &lt;string&gt;/volumes/backup/project/&lt;/string&gt; &lt;/array&gt; &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt; &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt; &lt;key&gt;StartCalendarInterval&lt;/key&gt; &lt;dict&gt; &lt;key&gt;Hour&lt;/key&gt; &lt;integer&gt;6&lt;/integer&gt; &lt;key&gt;Minute&lt;/key&gt; &lt;integer&gt;0&lt;/integer&gt; &lt;/dict&gt; &lt;/dict&gt; &lt;/plist&gt;  這個 plist，ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。
+                  <a href="https://blog.superbil.org/post/launchd-backup-with-rsync/" class="post-read-more">[Read More]</a>
+                
+              </div>
+    
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/rsync">rsync</a>&nbsp;
+                  
+                    #<a href="/tags/mac">mac</a>&nbsp;
+                  
+                    #<a href="/tags/launchd">launchd</a>&nbsp;
+                  
+                    #<a href="/tags/launchctl">launchctl</a>&nbsp;
+                  
+                </span>
+              
+    
+            </article>
+          
+        </div>
+        
       </div>
-    </article>
+    </div>
   </div>
 
     <footer>
