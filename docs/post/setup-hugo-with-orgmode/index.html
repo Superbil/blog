@@ -122,17 +122,13 @@ ga('send', 'pageview');
 <li>安裝 hugo</li>
 </ul>
 
-<pre><code class="language-sh">
-brew install hugo
-</code></pre>
+<p><code>brew install hugo</code></p>
 
 <ul>
 <li>開新專案</li>
 </ul>
 
-<pre><code class="language-sh">
-hugo new site blog
-</code></pre>
+<p><code>hugo new site blog</code></p>
 
 <ul>
 <li>安裝佈景</li>
@@ -140,27 +136,21 @@ hugo new site blog
 
 <p>我用 git submodule 來解決這個記錄</p>
 
-<pre><code class="language-sh">
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
-</code></pre>
+<p><code>git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo</code></p>
 
 <ul>
 <li>建立新文章</li>
 </ul>
 
-<pre><code class="language-sh">
-hugo new post/new-post.org
-</code></pre>
+<p><code>hugo new post/new-post.org</code></p>
 
 <ul>
 <li>產生網站</li>
 </ul>
 
-<pre><code class="language-sh">
-hugo
-</code></pre>
+<p><code>hugo</code></p>
 
-<p>目前使用 <code>hugo v0.21</code> 版, 可以直接吃 org 檔，範例如下：</p>
+<p>目前使用 <strong>hugo v0.21</strong> 版, 可以直接吃 org 檔，範例如下：</p>
 
 <pre><code class="language-org-mode">
 #+TITLE: 設定 hugo 和 org-mode
@@ -171,12 +161,53 @@ hugo
 文章內容… balabala
 </code></pre>
 
-<p>本來用+,-之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
-像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用</p>
+<p>本來用 <strong>+</strong>, <strong>-</strong> 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</p>
 
 <p>因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的</p>
 
 <p>不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。</p>
+
+<h2 id="github-page">Github page</h2>
+
+<p>用 hugo 這類的靜態網誌產生器就是要放在免費的空間，像是 github page 就是常見的解決方案</p>
+
+<ul>
+<li>先在 github 開好 repo 並且把相關的東西加到 git 裡面</li>
+</ul>
+
+<pre><code class="language-sh">
+  git init .
+  git add -A
+  git commit -m &quot;Init blog&quot;
+</code></pre>
+
+<ul>
+<li>調整產生的目錄</li>
+</ul>
+
+<p>設定檔 <code>config.toml</code> 中把產生的目標目錄改成 <code>docs</code> 這樣就不用製作 <code>gh-page</code> 這個特別的 branch。</p>
+
+<p><code>publishDir = &quot;docs&quot;</code></p>
+
+<ul>
+<li>設定好上傳的目標，並且上傳</li>
+</ul>
+
+<p>記得先用 <code>hugo</code> 產生出靜態網頁</p>
+
+<pre><code class="language-sh">
+  git remote add origin &lt;your_repo&gt;
+  git push origin master
+</code></pre>
+
+<ul>
+<li>github repo 設定</li>
+</ul>
+
+<p>在 Settings > Options > Github Pages，把 Source 選為 <strong>master branch /docs folder</strong> 。</p>
+
+<p>若使用這個 docs 目錄的話 CNAME 之類的也要放在其之下，而且只能是 docs 這個資料夾名稱。</p>
 
       </article>
 
