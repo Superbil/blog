@@ -14,10 +14,10 @@
     
     <item>
       <title>從 XIB 建立 UITableViewCell 的問題</title>
-      <link>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</link>
+      <link>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</link>
       <pubDate>Wed, 05 Nov 2014 11:25:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</guid>
+      <guid>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</guid>
       <description>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
 在 UITableView 的 viewDidLoad 裡面建立好相關的參照
 - (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;quot;MyTableViewCell&amp;quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用
@@ -27,10 +27,10 @@
     
     <item>
       <title>產生 lame for iOS</title>
-      <link>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</link>
+      <link>https://blog.superbil.org/post/build-lame-library-for-ios/</link>
       <pubDate>Tue, 10 Dec 2013 17:05:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</guid>
+      <guid>https://blog.superbil.org/post/build-lame-library-for-ios/</guid>
       <description>lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
 修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
 東西會產生在 build 這個資料夾之下
@@ -40,10 +40,10 @@ PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比�
     
     <item>
       <title>iOS enter background</title>
-      <link>https://blog.superbil.org/cocoa/ios-enter-background/</link>
+      <link>https://blog.superbil.org/post/ios-enter-background/</link>
       <pubDate>Thu, 05 Sep 2013 17:40:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/ios-enter-background/</guid>
+      <guid>https://blog.superbil.org/post/ios-enter-background/</guid>
       <description>If yout want to do something in background&amp;hellip;
 __block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });  </description>
     </item>

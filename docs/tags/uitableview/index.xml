@@ -14,10 +14,10 @@
     
     <item>
       <title>從 XIB 建立 UITableViewCell 的問題</title>
-      <link>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</link>
+      <link>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</link>
       <pubDate>Wed, 05 Nov 2014 11:25:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</guid>
+      <guid>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</guid>
       <description>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
 在 UITableView 的 viewDidLoad 裡面建立好相關的參照
 - (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;quot;MyTableViewCell&amp;quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用

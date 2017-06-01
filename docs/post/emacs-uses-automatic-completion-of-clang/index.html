@@ -5,17 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Emacs</title>
-  <meta property="og:title" content="Emacs" />
-  <meta name="twitter:title" content="Emacs" />
+  <title>在 emacs 中呼叫 clang 的自動完成</title>
+  <meta property="og:title" content="在 emacs 中呼叫 clang 的自動完成" />
+  <meta name="twitter:title" content="在 emacs 中呼叫 clang 的自動完成" />
+  <meta name="description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
+安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&quot;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config)  /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
+  <meta property="og:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
+安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&quot;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config)  /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
+  <meta name="twitter:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
+安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable …">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://blog.superbil.org/emacs/" />
+  <meta property="og:url" content="https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Superbil.nil" />
 
   <meta name="generator" content="Hugo 0.21" />
-  <link rel="canonical" href="https://blog.superbil.org/emacs/" />
+  <link rel="canonical" href="https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/" />
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -51,6 +62,24 @@ ga('send', 'pageview');
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
         
+          
+            <li>
+              <a title="about" href="/about/">about</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Posts" href="/post/">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="tags" href="/tags/">tags</a>
+            </li>
+          
+        
 
         
 
@@ -71,14 +100,33 @@ ga('send', 'pageview');
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Emacs</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>在 emacs 中呼叫 clang 的自動完成</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on November 19, 2013
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -86,26 +134,13 @@ ga('send', 'pageview');
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://blog.superbil.org/emacs/emacs-uses-automatic-completion-of-clang/">
-                <h2 class="post-title">在 emacs 中呼叫 clang 的自動完成</h2>
-    
-                
-              </a>
-    
-              <p class="post-meta">
-                Posted on November 19, 2013
-              </p>
-              <div class="post-entry">
-                
-                  <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a> 東西</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a> 東西</p>
 
 <p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github 上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
 
@@ -128,26 +163,38 @@ PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路�
 
 <p>不過目前只能當下的檔案，可以再使用 <code>M-x ac-clang-set-cflags</code> 來設定 cFlags，不過目前還沒有成功 XD</p>
 
-                
-              </div>
-    
-              
-                <span class="post-meta">
-                  
-                    #<a href="/tags/clang">clang</a>&nbsp;
-                  
-                    #<a href="/tags/homebrew">Homebrew</a>&nbsp;
-                  
-                </span>
-              
-    
-            </article>
+      </article>
+
+      
+        <span class="post-meta">
           
-        </div>
+          #<a href="/tags/emacs">emacs</a>&nbsp;
+          
+          #<a href="/tags/clang">clang</a>&nbsp;
+          
+          #<a href="/tags/homebrew">Homebrew</a>&nbsp;
+          
+        </span>
+      
+
+      <ul class="pager blog-pager">
         
-      </div>
+          <li class="previous">
+            <a href="https://blog.superbil.org/post/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="https://blog.superbil.org/post/build-lame-library-for-ios/" data-toggle="tooltip" data-placement="top" title="產生 lame for iOS">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

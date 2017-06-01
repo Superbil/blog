@@ -14,20 +14,20 @@
     
     <item>
       <title>XCode 5 註記</title>
-      <link>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</link>
+      <link>https://blog.superbil.org/post/xcode-5-comment-mark/</link>
       <pubDate>Fri, 03 Jan 2014 14:28:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</guid>
+      <guid>https://blog.superbil.org/post/xcode-5-comment-mark/</guid>
       <description>XCode 5 內建支援的標記有
 // FIXME: I really need to fix this // TODO: make some money // MARK: mom, I am here ! // ???: what r u doing? // !!!: this is magic code.  比對的條件是 // &amp;lt;Keyword&amp;gt;: 冒號是必要的</description>
     </item>
     
     <item>
       <title>產生 lame for iOS</title>
-      <link>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</link>
+      <link>https://blog.superbil.org/post/build-lame-library-for-ios/</link>
       <pubDate>Tue, 10 Dec 2013 17:05:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</guid>
+      <guid>https://blog.superbil.org/post/build-lame-library-for-ios/</guid>
       <description>lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
 修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
 東西會產生在 build 這個資料夾之下

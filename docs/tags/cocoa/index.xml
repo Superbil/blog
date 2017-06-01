@@ -14,10 +14,10 @@
     
     <item>
       <title>iOS enter background</title>
-      <link>https://blog.superbil.org/cocoa/ios-enter-background/</link>
+      <link>https://blog.superbil.org/post/ios-enter-background/</link>
       <pubDate>Thu, 05 Sep 2013 17:40:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/ios-enter-background/</guid>
+      <guid>https://blog.superbil.org/post/ios-enter-background/</guid>
       <description>If yout want to do something in background&amp;hellip;
 __block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });  </description>
     </item>

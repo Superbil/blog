@@ -36,10 +36,10 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
     
     <item>
       <title>從 XIB 建立 UITableViewCell 的問題</title>
-      <link>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</link>
+      <link>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</link>
       <pubDate>Wed, 05 Nov 2014 11:25:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/init-uitableviewcell-problem-from-xib/</guid>
+      <guid>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</guid>
       <description>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
 在 UITableView 的 viewDidLoad 裡面建立好相關的參照
 - (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;quot;MyTableViewCell&amp;quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; }  再建立 cell 時候，大概像這樣使用
@@ -63,20 +63,20 @@ rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/back
     
     <item>
       <title>XCode 5 註記</title>
-      <link>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</link>
+      <link>https://blog.superbil.org/post/xcode-5-comment-mark/</link>
       <pubDate>Fri, 03 Jan 2014 14:28:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</guid>
+      <guid>https://blog.superbil.org/post/xcode-5-comment-mark/</guid>
       <description>XCode 5 內建支援的標記有
 // FIXME: I really need to fix this // TODO: make some money // MARK: mom, I am here ! // ???: what r u doing? // !!!: this is magic code.  比對的條件是 // &amp;lt;Keyword&amp;gt;: 冒號是必要的</description>
     </item>
     
     <item>
       <title>產生 lame for iOS</title>
-      <link>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</link>
+      <link>https://blog.superbil.org/post/build-lame-library-for-ios/</link>
       <pubDate>Tue, 10 Dec 2013 17:05:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/build-lame-library-for-ios/</guid>
+      <guid>https://blog.superbil.org/post/build-lame-library-for-ios/</guid>
       <description>lame 官方沒有提供 iOS 的版本只能自己動手做，但是網路上的都是 XCode 4 和用 gcc 編譯的方式
 修正一些編譯上會遇到的問題，只要先去抓 lame 官方的程式碼 ，然後把以下的 script 放在解壓縮出來的資料夾中，再執行即可
 東西會產生在 build 這個資料夾之下
@@ -86,10 +86,10 @@ PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比�
     
     <item>
       <title>在 emacs 中呼叫 clang 的自動完成</title>
-      <link>https://blog.superbil.org/emacs/emacs-uses-automatic-completion-of-clang/</link>
+      <link>https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/</link>
       <pubDate>Tue, 19 Nov 2013 18:15:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/emacs/emacs-uses-automatic-completion-of-clang/</guid>
+      <guid>https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/</guid>
       <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
 安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
 (require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;quot;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config)  /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
@@ -98,10 +98,10 @@ PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比�
     
     <item>
       <title>sort Xcode project</title>
-      <link>https://blog.superbil.org/cocoa/sort-xcode-project-file-and-directory/</link>
+      <link>https://blog.superbil.org/post/sort-xcode-project-file-and-directory/</link>
       <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/sort-xcode-project-file-and-directory/</guid>
+      <guid>https://blog.superbil.org/post/sort-xcode-project-file-and-directory/</guid>
       <description>I found this perl script can sort Xcode Project
 sort-Xcode-project-file
 just download it and run it
@@ -110,10 +110,10 @@ $ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-p
     
     <item>
       <title>iOS enter background</title>
-      <link>https://blog.superbil.org/cocoa/ios-enter-background/</link>
+      <link>https://blog.superbil.org/post/ios-enter-background/</link>
       <pubDate>Thu, 05 Sep 2013 17:40:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/ios-enter-background/</guid>
+      <guid>https://blog.superbil.org/post/ios-enter-background/</guid>
       <description>If yout want to do something in background&amp;hellip;
 __block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });  </description>
     </item>

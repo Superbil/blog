@@ -14,10 +14,10 @@
     
     <item>
       <title>XCode 5 註記</title>
-      <link>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</link>
+      <link>https://blog.superbil.org/post/xcode-5-comment-mark/</link>
       <pubDate>Fri, 03 Jan 2014 14:28:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/cocoa/xcode-5-comment-mark/</guid>
+      <guid>https://blog.superbil.org/post/xcode-5-comment-mark/</guid>
       <description>XCode 5 內建支援的標記有
 // FIXME: I really need to fix this // TODO: make some money // MARK: mom, I am here ! // ???: what r u doing? // !!!: this is magic code.  比對的條件是 // &amp;lt;Keyword&amp;gt;: 冒號是必要的</description>
     </item>
