@@ -106,13 +106,8 @@ ga('send', 'pageview');
               <div class="post-entry">
                 
                   設定 hugo 而且用 org-mode 當作來源
-如何做  安裝 hugo  brew install hugo
- 開新專案  hugo new site blog
- 安裝佈景  我用 git submodule 來解決這個記錄
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
- 建立新文章  hugo new post/new-post.org
- 產生網站  hugo
-目前使用 hugo v0.21 版, 可以直接吃 org 檔，範例如下：
+如何做  安裝 hugo  brew install hugo   開新專案  hugo new site blog   安裝佈景  我用 git submodule 來解決這個記錄
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~   建立新文章  hugo new post/new-post.org   產生網站  hugo  目前使用 hugo v0.21 版, 可以直接吃 org 檔，範例如下：
 #+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala  本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主
                   <a href="https://blog.superbil.org/post/setup-hugo-with-orgmode/" class="post-read-more">[Read More]</a>
                 

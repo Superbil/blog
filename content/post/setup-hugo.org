@@ -10,25 +10,34 @@
 
 + 安裝 hugo
 
-~brew install hugo~
+#+BEGIN_SRC sh
+  brew install hugo
+#+END_SRC
 
 + 開新專案
 
-~hugo new site blog~
+#+BEGIN_SRC sh
+  hugo new site blog
+#+END_SRC
 
 + 安裝佈景
 
   我用 git submodule 來解決這個記錄
-
-~git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+#+BEGIN_SRC sh
+  git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+#+END_SRC
 
 + 建立新文章
 
-~hugo new post/new-post.org~
+#+BEGIN_SRC sh
+  hugo new post/new-post.org
+#+END_SRC
 
 + 產生網站
 
-~hugo~
+#+BEGIN_SRC sh
+  hugo
+#+END_SRC
 
 目前使用 *hugo v0.21* 版, 可以直接吃 org 檔，範例如下：
 
@@ -64,7 +73,9 @@
 
 設定檔 ~config.toml~ 中把產生的目標目錄改成 ~docs~ 這樣就不用製作 ~gh-page~ 這個特別的 branch。
 
-~publishDir = "docs"~
+#+BEGIN_EXAMPLE
+  publishDir = "docs"
+#+END_EXAMPLE
 
 + 設定好上傳的目標，並且上傳
 

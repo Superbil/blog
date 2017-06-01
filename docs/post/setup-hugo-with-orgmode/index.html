@@ -122,13 +122,17 @@ ga('send', 'pageview');
 <li>安裝 hugo</li>
 </ul>
 
-<p><code>brew install hugo</code></p>
+<pre><code class="language-sh">
+  brew install hugo
+</code></pre>
 
 <ul>
 <li>開新專案</li>
 </ul>
 
-<p><code>hugo new site blog</code></p>
+<pre><code class="language-sh">
+  hugo new site blog
+</code></pre>
 
 <ul>
 <li>安裝佈景</li>
@@ -136,19 +140,25 @@ ga('send', 'pageview');
 
 <p>我用 git submodule 來解決這個記錄</p>
 
-<p><code>git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo</code></p>
+<pre><code class="language-sh">
+  git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+</code></pre>
 
 <ul>
 <li>建立新文章</li>
 </ul>
 
-<p><code>hugo new post/new-post.org</code></p>
+<pre><code class="language-sh">
+  hugo new post/new-post.org
+</code></pre>
 
 <ul>
 <li>產生網站</li>
 </ul>
 
-<p><code>hugo</code></p>
+<pre><code class="language-sh">
+  hugo
+</code></pre>
 
 <p>目前使用 <strong>hugo v0.21</strong> 版, 可以直接吃 org 檔，範例如下：</p>
 
@@ -188,7 +198,9 @@ ga('send', 'pageview');
 
 <p>設定檔 <code>config.toml</code> 中把產生的目標目錄改成 <code>docs</code> 這樣就不用製作 <code>gh-page</code> 這個特別的 branch。</p>
 
-<p><code>publishDir = &quot;docs&quot;</code></p>
+<pre><code>
+  publishDir = &quot;docs&quot;
+</code></pre>
 
 <ul>
 <li>設定好上傳的目標，並且上傳</li>
@@ -210,6 +222,16 @@ ga('send', 'pageview');
 <p>若使用這個 docs 目錄的話 CNAME 之類的也要放在其之下，而且只能是 docs 這個資料夾名稱。</p>
 
       </article>
+
+      
+        <span class="post-meta">
+          
+          #<a href="/tags/hugo">hugo</a>&nbsp;
+          
+          #<a href="/tags/org-mode">org-mode</a>&nbsp;
+          
+        </span>
+      
 
       <ul class="pager blog-pager">
         
