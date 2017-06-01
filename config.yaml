@@ -3,6 +3,18 @@ title: "Superbil.nil"
 publishDir: "docs"
 theme: "beautifulhugo"
 
+SectionPagesMenu: "main"
+menu:
+  main:
+    - name: "about"
+      identifier: "about"
+      weight: -100
+      url: "/about/"
+
+    - name: "tags"
+      identifier: "tags"
+      url: "/tags/"
+
 params:
   author: "Superbil"
   isCJKLanguage: true
