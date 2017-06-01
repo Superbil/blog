@@ -2,7 +2,7 @@
 title = "在 emacs 中呼叫 clang 的自動完成"
 date = 2013-11-19T18:15:00+08:00
 slug = "emacs-uses-automatic-completion-of-clang"
-tags = ["clang","Homebrew"]
+tags = ["emacs","clang","Homebrew"]
 +++
 一開始是在 [homebrew](http://brew.sh/) 發現這個 [emacs-clang-complete-async](https://github.com/Golevka/emacs-clang-complete-async) 東西
 
