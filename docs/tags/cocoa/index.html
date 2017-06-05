@@ -121,23 +121,11 @@ ga('send', 'pageview');
               <p class="post-meta">
                 Posted on September 5, 2013
               </p>
-              <div class="post-entry">
-                
-                  <p>If yout want to do something in background&hellip;</p>
-
-<pre><code class="language-objc">__block UIBackgroundTaskIdentifier backgroundId =
-[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-    [[UIApplication sharedApplication] endBackgroundTask:backgroundId];
-    backgroundId = UIBackgroundTaskInvalid;
-}];
-
-dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{
-    // do some thing you want to ...
-});
-</code></pre>
-
-                
-              </div>
+              
+              
+              
+              
+              
     
               
                 <span class="post-meta">

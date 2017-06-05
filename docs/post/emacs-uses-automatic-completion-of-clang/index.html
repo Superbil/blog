@@ -138,25 +138,26 @@ ga('send', 'pageview');
     
 <div class="container">
   <div class="row">
+
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
       <article role="main" class="blog-post">
         <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a> 東西</p>
 
 <p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github 上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
+<div class="highlight"><pre><code class="language-cl" data-lang="cl"><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;auto-complete-clang-async</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">ac-cc-mode-setup</span> <span class="p">()</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">ac-clang-complete-executable</span> <span class="s">&quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">ac-sources</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">ac-source-clang-async</span><span class="p">))</span>
+  <span class="p">(</span><span class="nv">ac-clang-launch-completion-process</span><span class="p">))</span>
 
-<pre><code class="language-cl">(require 'auto-complete-clang-async)
-(defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable &quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&quot;)
-  (setq ac-sources '(ac-source-clang-async))
-  (ac-clang-launch-completion-process))
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">my-ac-config</span> <span class="p">()</span>
+  <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;c-mode-common-hook</span> <span class="ss">&#39;ac-cc-mode-setup</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;auto-complete-mode-hook</span> <span class="ss">&#39;ac-common-setup</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">global-auto-complete-mode</span> <span class="no">t</span><span class="p">))</span>
 
-(defun my-ac-config ()
-  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-  (global-auto-complete-mode t))
-
-(my-ac-config)
-</code></pre>
+<span class="p">(</span><span class="nv">my-ac-config</span><span class="p">)</span>
+</code></pre></div>
 
 <p><code>/usr/local/opt/emacs-clang-complete-async/bin/clang-complete</code> 這個是使用 <a href="http://brew.sh/">homebrew</a> 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來
 PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路徑</p>
@@ -166,27 +167,28 @@ PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路�
       </article>
 
       
-        <span class="post-meta">
-          
-          #<a href="/tags/emacs">emacs</a>&nbsp;
-          
-          #<a href="/tags/clang">clang</a>&nbsp;
-          
-          #<a href="/tags/homebrew">Homebrew</a>&nbsp;
-          
-        </span>
+      <span class="post-meta">
+        
+        #<a href="/tags/emacs">emacs</a>&nbsp;
+        
+        #<a href="/tags/clang">clang</a>&nbsp;
+        
+        #<a href="/tags/homebrew">Homebrew</a>&nbsp;
+        
+      </span>
       
+
 
       <ul class="pager blog-pager">
         
-          <li class="previous">
-            <a href="https://blog.superbil.org/post/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">&larr; Previous Post</a>
-          </li>
+        <li class="previous">
+          <a href="https://blog.superbil.org/post/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">&larr; Previous Post</a>
+        </li>
         
         
-          <li class="next">
-            <a href="https://blog.superbil.org/post/build-lame-library-for-ios/" data-toggle="tooltip" data-placement="top" title="產生 lame for iOS">Next Post &rarr;</a>
-          </li>
+        <li class="next">
+          <a href="https://blog.superbil.org/post/build-lame-library-for-ios/" data-toggle="tooltip" data-placement="top" title="產生 lame for iOS">Next Post &rarr;</a>
+        </li>
         
       </ul>
 

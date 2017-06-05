@@ -143,66 +143,64 @@ ga('send', 'pageview');
     
 <div class="container">
   <div class="row">
+
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
       <article role="main" class="blog-post">
         <p>備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭</p>
 
 <p>基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具</p>
 
 <p>經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣</p>
-
-<pre><code class="language-bash">rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>rsync -auzthv --exclude-from<span class="o">=</span>rsync_exclude --delete-after project/ /volumes/backup/project/
+</code></pre></div>
 
 <p>在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)</p>
 
 <p>依照<a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">官方說明</a>，我就做了一個這樣的 <a href="https://gist.github.com/Superbil/edb9701ef07df2e88091">plist</a> 出來</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
-&lt;dict&gt;
-	&lt;key&gt;Debug&lt;/key&gt;
-	&lt;true/&gt;
-	&lt;key&gt;Label&lt;/key&gt;
-	&lt;string&gt;org.superbil.rsync&lt;/string&gt;
-	&lt;key&gt;ProgramArguments&lt;/key&gt;
-	&lt;array&gt;
-		&lt;string&gt;/usr/bin/rsync&lt;/string&gt;
-		&lt;string&gt;-auzthv&lt;/string&gt;
-		&lt;string&gt;--delete-after&lt;/string&gt;
-		&lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt;
-		&lt;string&gt;project/&lt;/string&gt;
-		&lt;string&gt;/volumes/backup/project/&lt;/string&gt;
-	&lt;/array&gt;
-	&lt;key&gt;StandardErrorPath&lt;/key&gt;
-	&lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt;
-	&lt;key&gt;StandardOutPath&lt;/key&gt;
-	&lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt;
-	&lt;key&gt;StartCalendarInterval&lt;/key&gt;
-	&lt;dict&gt;
-		&lt;key&gt;Hour&lt;/key&gt;
-		&lt;integer&gt;6&lt;/integer&gt;
-		&lt;key&gt;Minute&lt;/key&gt;
-		&lt;integer&gt;0&lt;/integer&gt;
-	&lt;/dict&gt;
-&lt;/dict&gt;
-&lt;/plist&gt;
-</code></pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+	<span class="nt">&lt;key&gt;</span>Debug<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;true/&gt;</span>
+	<span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>org.superbil.rsync<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>ProgramArguments<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;string&gt;</span>/usr/bin/rsync<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>-auzthv<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>--delete-after<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>--exclude-from=rsync_exclude<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>project/<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>/volumes/backup/project/<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StandardErrorPath<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project.log<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StandardOutPath<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project_err.log<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StartCalendarInterval<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;dict&gt;</span>
+		<span class="nt">&lt;key&gt;</span>Hour<span class="nt">&lt;/key&gt;</span>
+		<span class="nt">&lt;integer&gt;</span>6<span class="nt">&lt;/integer&gt;</span>
+		<span class="nt">&lt;key&gt;</span>Minute<span class="nt">&lt;/key&gt;</span>
+		<span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+	<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre></div>
 
 <p>這個 plist，<code>ProgramArguments</code> 這項單行和多行都可以，launchd 會幫你組成一行。<code>StartCalendarInterval</code> 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。</p>
 
 <p>因為是使用者自己要用的，所以再把這個檔案放在 <code>~/Library/LaunchAgents</code>，名子就叫 <code>org.superbil.rsync</code>。</p>
 
 <p>最後再把他 load 進列表中</p>
-
-<pre><code class="language-bash">launchctl load -w org.superbil.rsync.plist
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>launchctl load -w org.superbil.rsync.plist
+</code></pre></div>
 
 <p>PS. 若是要用 <code>launchctl start</code> 後面帶的參數必需是 lable 的值，例:</p>
-
-<pre><code class="language-bash">launchctl start org.superbil.rsync
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>launchctl start org.superbil.rsync
+</code></pre></div>
 
 <p>相關連接：
 - <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/Introduction.html#//apple_ref/doc/uid/10000172i-SW1-SW1">Daemons and Services Programming Guide: About Daemons and Services</a>
@@ -211,29 +209,30 @@ ga('send', 'pageview');
       </article>
 
       
-        <span class="post-meta">
-          
-          #<a href="/tags/rsync">rsync</a>&nbsp;
-          
-          #<a href="/tags/mac">mac</a>&nbsp;
-          
-          #<a href="/tags/launchd">launchd</a>&nbsp;
-          
-          #<a href="/tags/launchctl">launchctl</a>&nbsp;
-          
-        </span>
+      <span class="post-meta">
+        
+        #<a href="/tags/rsync">rsync</a>&nbsp;
+        
+        #<a href="/tags/mac">mac</a>&nbsp;
+        
+        #<a href="/tags/launchd">launchd</a>&nbsp;
+        
+        #<a href="/tags/launchctl">launchctl</a>&nbsp;
+        
+      </span>
       
+
 
       <ul class="pager blog-pager">
         
-          <li class="previous">
-            <a href="https://blog.superbil.org/post/xcode-5-comment-mark/" data-toggle="tooltip" data-placement="top" title="XCode 5 註記">&larr; Previous Post</a>
-          </li>
+        <li class="previous">
+          <a href="https://blog.superbil.org/post/xcode-5-comment-mark/" data-toggle="tooltip" data-placement="top" title="XCode 5 註記">&larr; Previous Post</a>
+        </li>
         
         
-          <li class="next">
-            <a href="https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/" data-toggle="tooltip" data-placement="top" title="從 XIB 建立 UITableViewCell 的問題">Next Post &rarr;</a>
-          </li>
+        <li class="next">
+          <a href="https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/" data-toggle="tooltip" data-placement="top" title="從 XIB 建立 UITableViewCell 的問題">Next Post &rarr;</a>
+        </li>
         
       </ul>
 

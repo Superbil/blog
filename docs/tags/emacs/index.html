@@ -121,33 +121,11 @@ ga('send', 'pageview');
               <p class="post-meta">
                 Posted on November 19, 2013
               </p>
-              <div class="post-entry">
-                
-                  <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a> 東西</p>
-
-<p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github 上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
-
-<pre><code class="language-cl">(require 'auto-complete-clang-async)
-(defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable &quot;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&quot;)
-  (setq ac-sources '(ac-source-clang-async))
-  (ac-clang-launch-completion-process))
-
-(defun my-ac-config ()
-  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-  (global-auto-complete-mode t))
-
-(my-ac-config)
-</code></pre>
-
-<p><code>/usr/local/opt/emacs-clang-complete-async/bin/clang-complete</code> 這個是使用 <a href="http://brew.sh/">homebrew</a> 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來
-PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路徑</p>
-
-<p>不過目前只能當下的檔案，可以再使用 <code>M-x ac-clang-set-cflags</code> 來設定 cFlags，不過目前還沒有成功 XD</p>
-
-                
-              </div>
+              
+              
+              
+              
+              
     
               
                 <span class="post-meta">

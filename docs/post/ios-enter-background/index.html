@@ -133,39 +133,41 @@ ga('send', 'pageview');
     
 <div class="container">
   <div class="row">
+
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
       <article role="main" class="blog-post">
         <p>If yout want to do something in background&hellip;</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span></span><span class="k">__block</span> <span class="n">UIBackgroundTaskIdentifier</span> <span class="n">backgroundId</span> <span class="o">=</span>
+<span class="p">[[</span><span class="bp">UIApplication</span> <span class="n">sharedApplication</span><span class="p">]</span> <span class="nl">beginBackgroundTaskWithExpirationHandler</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+    <span class="p">[[</span><span class="bp">UIApplication</span> <span class="n">sharedApplication</span><span class="p">]</span> <span class="nl">endBackgroundTask</span><span class="p">:</span><span class="n">backgroundId</span><span class="p">];</span>
+    <span class="n">backgroundId</span> <span class="o">=</span> <span class="n">UIBackgroundTaskInvalid</span><span class="p">;</span>
+<span class="p">}];</span>
 
-<pre><code class="language-objc">__block UIBackgroundTaskIdentifier backgroundId =
-[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-    [[UIApplication sharedApplication] endBackgroundTask:backgroundId];
-    backgroundId = UIBackgroundTaskInvalid;
-}];
-
-dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{
-    // do some thing you want to ...
-});
-</code></pre>
+<span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="nb">NULL</span><span class="p">),</span> <span class="o">^</span><span class="p">{</span>
+    <span class="c1">// do some thing you want to ...</span>
+<span class="p">});</span>
+</code></pre></div>
 
       </article>
 
       
-        <span class="post-meta">
-          
-          #<a href="/tags/ios">iOS</a>&nbsp;
-          
-          #<a href="/tags/cocoa">cocoa</a>&nbsp;
-          
-        </span>
+      <span class="post-meta">
+        
+        #<a href="/tags/ios">iOS</a>&nbsp;
+        
+        #<a href="/tags/cocoa">cocoa</a>&nbsp;
+        
+      </span>
       
+
 
       <ul class="pager blog-pager">
         
         
-          <li class="next">
-            <a href="https://blog.superbil.org/post/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">Next Post &rarr;</a>
-          </li>
+        <li class="next">
+          <a href="https://blog.superbil.org/post/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">Next Post &rarr;</a>
+        </li>
         
       </ul>
 

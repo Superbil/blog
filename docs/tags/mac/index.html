@@ -121,17 +121,12 @@ ga('send', 'pageview');
               <p class="post-meta">
                 Posted on May 15, 2014
               </p>
-              <div class="post-entry">
-                
-                  備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
-基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
-經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
-rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/  在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
-依照官方說明，我就做了一個這樣的 plist 出來
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt; &lt;plist version=&quot;1.0&quot;&gt; &lt;dict&gt; &lt;key&gt;Debug&lt;/key&gt; &lt;true/&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;org.superbil.rsync&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;/usr/bin/rsync&lt;/string&gt; &lt;string&gt;-auzthv&lt;/string&gt; &lt;string&gt;--delete-after&lt;/string&gt; &lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt; &lt;string&gt;project/&lt;/string&gt; &lt;string&gt;/volumes/backup/project/&lt;/string&gt; &lt;/array&gt; &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt; &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt; &lt;key&gt;StartCalendarInterval&lt;/key&gt; &lt;dict&gt; &lt;key&gt;Hour&lt;/key&gt; &lt;integer&gt;6&lt;/integer&gt; &lt;key&gt;Minute&lt;/key&gt; &lt;integer&gt;0&lt;/integer&gt; &lt;/dict&gt; &lt;/dict&gt; &lt;/plist&gt;  這個 plist，ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。
-                  <a href="https://blog.superbil.org/post/launchd-backup-with-rsync/" class="post-read-more">[Read More]</a>
-                
-              </div>
+              
+              
+              
+              
+              
+              
     
               
                 <span class="post-meta">
