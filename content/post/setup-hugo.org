@@ -39,7 +39,7 @@
   hugo
 #+END_SRC
 
-目前使用 *hugo v0.21* 版, 可以直接吃 org 檔，範例如下：
+目前使用 *hugo v0.21* 版([[https://github.com/spf13/hugo/releases/tag/v0.19][0.19版後就有支援]]), 可以直接吃 org 檔，範例如下：
 
 #+BEGIN_SRC text
   #+TITLE: 設定 hugo 和 org-mode
