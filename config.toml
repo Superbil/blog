@@ -26,4 +26,5 @@ SectionPagesMenu = "main"
   slicknav = true
   Content = false
   googleAnalytics = "UA-52601-22"
-  disqusShortname = "superbil"
+  comments = true
+  disqusShortname = "superbil-nil"
