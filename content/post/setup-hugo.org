@@ -4,7 +4,7 @@
 #+TAGS: hugo org-mode
 #+description: 設定 hugo 而且用 org-mode 當作來源
 
-設定 hugo 而且用 org-mode 當作來源
+設定 [[https://gohugo.io/][hugo]] 而且用 org-mode 當作來源
 
 ** 如何做
 
