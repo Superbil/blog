@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>使用 rsync 和 launchd 自動備份</title>
+  <meta property="og:title" content="使用 rsync 和 launchd 自動備份" />
+  <meta name="twitter:title" content="使用 rsync 和 launchd 自動備份" />
+  <meta name="description" content="備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
+基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
+經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
+rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/ 在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
+依照官方說明，我就做了一個這樣的 plist 出來
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt; &lt;plist version=&#34;1.0&#34;&gt; &lt;dict&gt; &lt;key&gt;Debug&lt;/key&gt; &lt;true/&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;org.superbil.rsync&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;/usr/bin/rsync&lt;/string&gt; &lt;string&gt;-auzthv&lt;/string&gt; &lt;string&gt;--delete-after&lt;/string&gt; &lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt; &lt;string&gt;project/&lt;/string&gt; &lt;string&gt;/volumes/backup/project/&lt;/string&gt; &lt;/array&gt; &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt; &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt; &lt;key&gt;StartCalendarInterval&lt;/key&gt; &lt;dict&gt; &lt;key&gt;Hour&lt;/key&gt; &lt;integer&gt;6&lt;/integer&gt; &lt;key&gt;Minute&lt;/key&gt; &lt;integer&gt;0&lt;/integer&gt; &lt;/dict&gt; &lt;/dict&gt; &lt;/plist&gt; 這個 plist，ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。">
+  <meta property="og:description" content="備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
+基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
+經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
+rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/ 在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
+依照官方說明，我就做了一個這樣的 plist 出來
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt; &lt;plist version=&#34;1.0&#34;&gt; &lt;dict&gt; &lt;key&gt;Debug&lt;/key&gt; &lt;true/&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;org.superbil.rsync&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;/usr/bin/rsync&lt;/string&gt; &lt;string&gt;-auzthv&lt;/string&gt; &lt;string&gt;--delete-after&lt;/string&gt; &lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt; &lt;string&gt;project/&lt;/string&gt; &lt;string&gt;/volumes/backup/project/&lt;/string&gt; &lt;/array&gt; &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt; &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt; &lt;key&gt;StartCalendarInterval&lt;/key&gt; &lt;dict&gt; &lt;key&gt;Hour&lt;/key&gt; &lt;integer&gt;6&lt;/integer&gt; &lt;key&gt;Minute&lt;/key&gt; &lt;integer&gt;0&lt;/integer&gt; &lt;/dict&gt; &lt;/dict&gt; &lt;/plist&gt; 這個 plist，ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。">
+  <meta name="twitter:description" content="備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
+基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
+經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
+rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ …">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://blog.superbil.org/posts/launchd-backup-with-rsync/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Superbil.nil" />
+
+  <meta name="generator" content="Hugo 0.40.2" />
+  <link rel="canonical" href="https://blog.superbil.org/posts/launchd-backup-with-rsync/" />
+  <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://blog.superbil.org/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.superbil.org/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" />
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blog.superbil.org/">Superbil.nil</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="about" href="/about/">about</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Posts" href="/posts/">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="tags" href="/tags/">tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              <h1>使用 rsync 和 launchd 自動備份</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+        <p>備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭</p>
+
+<p>基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具</p>
+
+<p>經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">rsync -auzthv --exclude-from<span class="o">=</span>rsync_exclude --delete-after project/ /volumes/backup/project/</code></pre></div>
+<p>在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)</p>
+
+<p>依照<a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">官方說明</a>，我就做了一個這樣的 <a href="https://gist.github.com/Superbil/edb9701ef07df2e88091">plist</a> 出來</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+	<span class="nt">&lt;key&gt;</span>Debug<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;true/&gt;</span>
+	<span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>org.superbil.rsync<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>ProgramArguments<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;string&gt;</span>/usr/bin/rsync<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>-auzthv<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>--delete-after<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>--exclude-from=rsync_exclude<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>project/<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;string&gt;</span>/volumes/backup/project/<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StandardErrorPath<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project.log<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StandardOutPath<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project_err.log<span class="nt">&lt;/string&gt;</span>
+	<span class="nt">&lt;key&gt;</span>StartCalendarInterval<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;dict&gt;</span>
+		<span class="nt">&lt;key&gt;</span>Hour<span class="nt">&lt;/key&gt;</span>
+		<span class="nt">&lt;integer&gt;</span>6<span class="nt">&lt;/integer&gt;</span>
+		<span class="nt">&lt;key&gt;</span>Minute<span class="nt">&lt;/key&gt;</span>
+		<span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+	<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span></code></pre></div>
+<p>這個 plist，<code>ProgramArguments</code> 這項單行和多行都可以，launchd 會幫你組成一行。<code>StartCalendarInterval</code> 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。</p>
+
+<p>因為是使用者自己要用的，所以再把這個檔案放在 <code>~/Library/LaunchAgents</code>，名子就叫 <code>org.superbil.rsync</code>。</p>
+
+<p>最後再把他 load 進列表中</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">launchctl load -w org.superbil.rsync.plist</code></pre></div>
+<p>PS. 若是要用 <code>launchctl start</code> 後面帶的參數必需是 lable 的值，例:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">launchctl start org.superbil.rsync</code></pre></div>
+<p>相關連接：
+- <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/Introduction.html#//apple_ref/doc/uid/10000172i-SW1-SW1">Daemons and Services Programming Guide: About Daemons and Services</a>
+- <a href="http://theiphonewiki.com/wiki/Launchctl">Launchctl - The iPhone Wiki</a></p>
+
+      </article>
+
+      
+      <span class="post-meta">
+        
+        #<a href="/tags/rsync">rsync</a>&nbsp;
+        
+        #<a href="/tags/mac">mac</a>&nbsp;
+        
+        #<a href="/tags/launchd">launchd</a>&nbsp;
+        
+        #<a href="/tags/launchctl">launchctl</a>&nbsp;
+        
+      </span>
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="https://blog.superbil.org/posts/xcode-5-comment-mark/" data-toggle="tooltip" data-placement="top" title="XCode 5 註記">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/" data-toggle="tooltip" data-placement="top" title="從 XIB 建立 UITableViewCell 的問題">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blog.superbil.org/">Superbil.nil</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.40.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://blog.superbil.org/js/main.js"></script>
+<script src="https://blog.superbil.org/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+  </body>
+</html>
+

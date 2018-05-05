@@ -6,7 +6,6 @@
     <description>Recent content in Cocoa on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <copyright>![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)</copyright>
     <lastBuildDate>Thu, 05 Sep 2013 17:40:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.superbil.org/tags/cocoa/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +18,7 @@
       
       <guid>https://blog.superbil.org/post/ios-enter-background/</guid>
       <description>If yout want to do something in background&amp;hellip;
-__block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });  </description>
+__block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });</description>
     </item>
     
   </channel>

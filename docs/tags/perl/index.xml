@@ -6,7 +6,6 @@
     <description>Recent content in Perl on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <copyright>![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)</copyright>
     <lastBuildDate>Thu, 07 Nov 2013 11:47:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.superbil.org/tags/perl/index.xml" rel="self" type="application/rss+xml" />
@@ -21,7 +20,7 @@
       <description>I found this perl script can sort Xcode Project
 sort-Xcode-project-file
 just download it and run it
-$ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file $ chmod +x sort-Xcode-project-file $ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj  you need to change MyProject to you xcode project name</description>
+$ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file $ chmod +x sort-Xcode-project-file $ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj you need to change MyProject to you xcode project name</description>
     </item>
     
   </channel>
