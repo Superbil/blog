@@ -1,9 +1,12 @@
 baseURL = "https://blog.superbil.org/"
+languageCode = "zh-tw"
 title = "Superbil.nil"
 publishDir = "docs"
 theme = "beautifulhugo"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
+googleAnalytics = "UA-52601-22"
+disqusShortname = "superbil-nil"
 
 SectionPagesMenu = "main"
 [[menu.main]]
@@ -25,6 +28,4 @@ SectionPagesMenu = "main"
   jquery = true
   slicknav = true
   Content = false
-  googleAnalytics = "UA-52601-22"
   comments = true
-  disqusShortname = "superbil-nil"
