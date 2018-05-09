@@ -8,16 +8,16 @@
   <title>在 emacs 中呼叫 clang 的自動完成</title>
   <meta property="og:title" content="在 emacs 中呼叫 clang 的自動完成" />
   <meta name="twitter:title" content="在 emacs 中呼叫 clang 的自動完成" />
-  <meta name="description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
-安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
-(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+  <meta name="description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
-  <meta property="og:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
-安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
-(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+  <meta property="og:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
-  <meta name="twitter:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
-安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
+  <meta name="twitter:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
 (require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable …">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
@@ -25,7 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Superbil.nil" />
 
-  <meta name="generator" content="Hugo 0.40.2" />
+  <meta name="generator" content="Hugo 0.40.3" />
   <link rel="canonical" href="https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/" />
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -36,6 +36,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
   <link rel="stylesheet" href="https://blog.superbil.org/css/pygment_highlights.css" />
   <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" />
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-52601-22', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
 
 </head>
 
@@ -128,9 +135,9 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <article role="main" class="blog-post">
-        <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a> 東西</p>
+        <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a>東西</p>
 
-<p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github 上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
+<p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
 <div class="highlight"><pre class="chroma"><code class="language-cl" data-lang="cl"><span class="p">(</span><span class="nv">require</span> <span class="ss">&#39;auto-complete-clang-async</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">defun</span> <span class="nv">ac-cc-mode-setup</span> <span class="p">()</span>
   <span class="p">(</span><span class="nv">setq</span> <span class="nv">ac-clang-complete-executable</span> <span class="s">&#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;</span><span class="p">)</span>
@@ -144,7 +151,7 @@
 
 <span class="p">(</span><span class="nv">my-ac-config</span><span class="p">)</span></code></pre></div>
 <p><code>/usr/local/opt/emacs-clang-complete-async/bin/clang-complete</code> 這個是使用 <a href="http://brew.sh/">homebrew</a> 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來
-PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路徑</p>
+PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路徑</p>
 
 <p>不過目前只能當下的檔案，可以再使用 <code>M-x ac-clang-set-cflags</code> 來設定 cFlags，不過目前還沒有成功 XD</p>
 
@@ -177,6 +184,29 @@ PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路�
 
       
   
+    <div class="disqus-comments">
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "superbil-nil" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  
 
 
 
@@ -204,7 +234,7 @@ PS. 也可以用<code>brew --prefix emacs-clang-complete-async</code>拿到路�
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.40.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.40.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

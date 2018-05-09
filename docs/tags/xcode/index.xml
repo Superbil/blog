@@ -13,10 +13,10 @@
     
     <item>
       <title>sort Xcode project</title>
-      <link>https://blog.superbil.org/post/sort-xcode-project-file-and-directory/</link>
+      <link>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</link>
       <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/post/sort-xcode-project-file-and-directory/</guid>
+      <guid>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</guid>
       <description>I found this perl script can sort Xcode Project
 sort-Xcode-project-file
 just download it and run it

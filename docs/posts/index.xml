@@ -5,20 +5,22 @@
     <link>https://blog.superbil.org/posts/</link>
     <description>Recent content in Posts on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 29 May 2017 06:37:54 +0800</lastBuildDate>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 29 May 2017 06:37:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.superbil.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>設定 hugo 和 org-mode</title>
-      <link>https://blog.superbil.org/posts/setup-hugo-with-orgmode/</link>
-      <pubDate>Mon, 29 May 2017 06:37:54 +0800</pubDate>
+      <link>https://blog.superbil.org/posts/setup-hugo/</link>
+      <pubDate>Mon, 29 May 2017 06:37:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/posts/setup-hugo-with-orgmode/</guid>
+      <guid>https://blog.superbil.org/posts/setup-hugo/</guid>
       <description>設定 hugo 而且用 org-mode 當作來源
-如何做  安裝 hugo  brew install hugo  開新專案  hugo new site blog  安裝佈景  我用 git submodule 來解決這個記錄
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~  建立新文章  hugo new post/new-post.org  產生網站  hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
+如何做  安裝 hugo  brew install hugo  開新專案  hugo new site blog  安裝佈景
+我用 git submodule 來解決這個記錄
+  git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~  建立新文章  hugo new post/new-post.org  產生網站  hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
 #+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala 本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</description>
     </item>
     
@@ -32,7 +34,7 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
 在 UITableView 的 viewDidLoad 裡面建立好相關的參照
 - (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;#34;MyTableViewCell&amp;#34; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; } 再建立 cell 時候，大概像這樣使用
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&amp;#34;MyCell&amp;#34; forIndexPath:indexPath]; // do cell things ...  return cell; } 然後執行之後會出錯，大概會看到像這樣的錯誤
-*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39;  原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException</description>
+*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &amp;#39;NSInternalInconsistencyException&amp;#39;, reason: &amp;#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&amp;#39; 原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException</description>
     </item>
     
     <item>
@@ -46,7 +48,7 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
 經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
 rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/ 在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
 依照官方說明，我就做了一個這樣的 plist 出來
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Debug&amp;lt;/key&amp;gt; &amp;lt;true/&amp;gt; &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;org.superbil.rsync&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt; &amp;lt;array&amp;gt; &amp;lt;string&amp;gt;/usr/bin/rsync&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;-auzthv&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;--delete-after&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;--exclude-from=rsync_exclude&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;project/&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;/volumes/backup/project/&amp;lt;/string&amp;gt; &amp;lt;/array&amp;gt; &amp;lt;key&amp;gt;StandardErrorPath&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;~/Library/Logs/rsync/project.log&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;StandardOutPath&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;~/Library/Logs/rsync/project_err.log&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;StartCalendarInterval&amp;lt;/key&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Hour&amp;lt;/key&amp;gt; &amp;lt;integer&amp;gt;6&amp;lt;/integer&amp;gt; &amp;lt;key&amp;gt;Minute&amp;lt;/key&amp;gt; &amp;lt;integer&amp;gt;0&amp;lt;/integer&amp;gt; &amp;lt;/dict&amp;gt; &amp;lt;/dict&amp;gt; &amp;lt;/plist&amp;gt; 這個 plist，ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt; &amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Debug&amp;lt;/key&amp;gt; &amp;lt;true/&amp;gt; &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;org.superbil.rsync&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt; &amp;lt;array&amp;gt; &amp;lt;string&amp;gt;/usr/bin/rsync&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;-auzthv&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;--delete-after&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;--exclude-from=rsync_exclude&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;project/&amp;lt;/string&amp;gt; &amp;lt;string&amp;gt;/volumes/backup/project/&amp;lt;/string&amp;gt; &amp;lt;/array&amp;gt; &amp;lt;key&amp;gt;StandardErrorPath&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;~/Library/Logs/rsync/project.log&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;StandardOutPath&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;~/Library/Logs/rsync/project_err.log&amp;lt;/string&amp;gt; &amp;lt;key&amp;gt;StartCalendarInterval&amp;lt;/key&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;Hour&amp;lt;/key&amp;gt; &amp;lt;integer&amp;gt;6&amp;lt;/integer&amp;gt; &amp;lt;key&amp;gt;Minute&amp;lt;/key&amp;gt; &amp;lt;integer&amp;gt;0&amp;lt;/integer&amp;gt; &amp;lt;/dict&amp;gt; &amp;lt;/dict&amp;gt; &amp;lt;/plist&amp;gt; 這個 plist， ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。 StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。</description>
     </item>
     
     <item>
@@ -56,7 +58,7 @@ rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/back
       
       <guid>https://blog.superbil.org/posts/xcode-5-comment-mark/</guid>
       <description>XCode 5 內建支援的標記有
-// FIXME: I really need to fix this // TODO: make some money // MARK: mom, I am here ! // ???: what r u doing? // !!!: this is magic code.  比對的條件是 // &amp;lt;Keyword&amp;gt;: 冒號是必要的</description>
+// FIXME: I really need to fix this // TODO: make some money // MARK: mom, I am here ! // ???: what r u doing? // !!!: this is magic code. 比對的條件是 // &amp;lt;Keyword&amp;gt;: 冒號是必要的</description>
     </item>
     
     <item>
@@ -78,9 +80,9 @@ PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比�
       <pubDate>Tue, 19 Nov 2013 18:15:00 +0800</pubDate>
       
       <guid>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</guid>
-      <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
-安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
-(require &amp;#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;) (setq ac-sources &amp;#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &amp;#39;c-mode-common-hook &amp;#39;ac-cc-mode-setup) (add-hook &amp;#39;auto-complete-mode-hook &amp;#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+      <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
+(require &amp;#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;) (setq ac-sources &amp;#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &amp;#39;c-mode-common-hook &amp;#39;ac-cc-mode-setup) (add-hook &amp;#39;auto-complete-mode-hook &amp;#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD</description>
     </item>
     

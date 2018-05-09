@@ -1,7 +1,0 @@
-#+TITLE: About
-#+DATE: 2017-05-29T02:10:41+08:00
-#+COMMENTS: nil
-
-Superbil.nil = [Superbil nil]
-
-空無一物

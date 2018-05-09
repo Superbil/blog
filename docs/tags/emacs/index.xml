@@ -13,13 +13,13 @@
     
     <item>
       <title>在 emacs 中呼叫 clang 的自動完成</title>
-      <link>https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/</link>
+      <link>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</link>
       <pubDate>Tue, 19 Nov 2013 18:15:00 +0800</pubDate>
       
-      <guid>https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/</guid>
-      <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async 東西
-安裝完之後，再參照 github 上的說明，在自己的 init.el 裡面放入以下的設定
-(require &amp;#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;) (setq ac-sources &amp;#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &amp;#39;c-mode-common-hook &amp;#39;ac-cc-mode-setup) (add-hook &amp;#39;auto-complete-mode-hook &amp;#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用brew --prefix emacs-clang-complete-async拿到路徑
+      <guid>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</guid>
+      <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
+(require &amp;#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;) (setq ac-sources &amp;#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &amp;#39;c-mode-common-hook &amp;#39;ac-cc-mode-setup) (add-hook &amp;#39;auto-complete-mode-hook &amp;#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD</description>
     </item>
     

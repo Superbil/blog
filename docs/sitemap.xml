@@ -3,47 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.superbil.org/post/setup-hugo-with-orgmode/</loc>
-    <lastmod>2017-05-29T06:37:54+08:00</lastmod>
+    <loc>https://blog.superbil.org/posts/setup-hugo/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.superbil.org/about/</loc>
-    <lastmod>2017-05-29T02:10:41+08:00</lastmod>
+    <lastmod>2017-05-29T02:10:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/init-uitableviewcell-problem-from-xib/</loc>
+    <loc>https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/</loc>
     <lastmod>2014-11-05T11:25:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/launchd-backup-with-rsync/</loc>
+    <loc>https://blog.superbil.org/posts/launchd-backup-with-rsync/</loc>
     <lastmod>2014-05-15T18:34:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/xcode-5-comment-mark/</loc>
+    <loc>https://blog.superbil.org/posts/xcode-5-comment-mark/</loc>
     <lastmod>2014-01-03T14:28:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/build-lame-library-for-ios/</loc>
+    <loc>https://blog.superbil.org/posts/build-lame-library-for-ios/</loc>
     <lastmod>2013-12-10T17:05:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/emacs-uses-automatic-completion-of-clang/</loc>
+    <loc>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</loc>
     <lastmod>2013-11-19T18:15:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/sort-xcode-project-file-and-directory/</loc>
+    <loc>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</loc>
     <lastmod>2013-11-07T11:47:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/ios-enter-background/</loc>
+    <loc>https://blog.superbil.org/posts/ios-enter-background/</loc>
     <lastmod>2013-09-05T17:40:00+08:00</lastmod>
   </url>
   
@@ -96,7 +96,7 @@
   
   <url>
     <loc>https://blog.superbil.org/tags/hugo/</loc>
-    <lastmod>2017-05-29T06:37:54+08:00</lastmod>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -132,7 +132,7 @@
   
   <url>
     <loc>https://blog.superbil.org/tags/org-mode/</loc>
-    <lastmod>2017-05-29T06:37:54+08:00</lastmod>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,8 +143,8 @@
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/post/</loc>
-    <lastmod>2017-05-29T06:37:54+08:00</lastmod>
+    <loc>https://blog.superbil.org/posts/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -156,7 +156,7 @@
   
   <url>
     <loc>https://blog.superbil.org/</loc>
-    <lastmod>2017-05-29T06:37:54+08:00</lastmod>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

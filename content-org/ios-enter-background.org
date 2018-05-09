@@ -1,0 +1,22 @@
+#+hugo_base_dir: ../
+#+seq_todo: TODO DRAFT DONE
+#+property: header-args :eval no
+
+#+TITLE: iOS enter background
+#+DATE: <2013-09-05 17:40:00>
+#+PROPERTY: SLUG ios-enter-background
+#+hugo_tags: iOS cocoa
+
+If yout want to do something in background...
+
+#+BEGIN_SRC objc
+  __block UIBackgroundTaskIdentifier backgroundId =
+  [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+      [[UIApplication sharedApplication] endBackgroundTask:backgroundId];
+      backgroundId = UIBackgroundTaskInvalid;
+  }];
+
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{
+      // do some thing you want to ...
+  });
+#+END_SRC

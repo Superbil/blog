@@ -1,0 +1,11 @@
+#+hugo_base_dir: ../
+#+hugo_section: ./
+#+seq_todo: TODO DRAFT DONE
+#+property: header-args :eval no
+
+#+TITLE: About
+#+DATE: <2017-05-29 02:10>
+
+Superbil.nil = [Superbil nil]
+
+空無一物

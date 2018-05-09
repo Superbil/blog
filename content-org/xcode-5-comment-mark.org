@@ -1,0 +1,20 @@
+#+hugo_base_dir: ../
+#+seq_todo: TODO DRAFT DONE
+#+property: header-args :eval no
+
+#+TITLE: XCode 5 註記
+#+DATE: <2014-01-03 14:28:00>
+#+PROPERTY: SLUG xcode-5-comment-mark
+#+hugo_tags: XCode5 editor
+
+XCode 5 內建支援的標記有
+
+#+BEGIN_EXAMPLE
+    // FIXME: I really need to fix this
+    // TODO: make some money
+    // MARK: mom, I am here !
+    // ???: what r u doing?
+    // !!!: this is magic code.
+#+END_EXAMPLE
+
+比對的條件是 =// <Keyword>:= 冒號是必要的

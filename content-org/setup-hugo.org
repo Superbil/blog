@@ -1,0 +1,97 @@
+#+hugo_base_dir: ../
+#+seq_todo: TODO DRAFT DONE
+#+property: header-args :eval no
+
+#+TITLE: 設定 hugo 和 org-mode
+#+DATE: <2017-05-29 06:37:54>
+#+DESCRIPTION: 設定 hugo 而且用 org-mode 當作來源
+#+PROPERTY: SLUG setup-hugo-with-orgmode
+#+hugo_tags: hugo org-mode
+
+設定 [[https://gohugo.io/][hugo]] 而且用 org-mode 當作來源
+
+** 如何做
+
+ + 安裝 hugo
+
+ #+BEGIN_SRC sh
+   brew install hugo
+ #+END_SRC
+
+ + 開新專案
+
+ #+BEGIN_SRC sh
+   hugo new site blog
+ #+END_SRC
+
+ + 安裝佈景
+
+   我用 git submodule 來解決這個記錄
+ #+BEGIN_SRC sh
+   git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+ #+END_SRC
+
+ + 建立新文章
+
+ #+BEGIN_SRC sh
+   hugo new post/new-post.org
+ #+END_SRC
+
+ + 產生網站
+
+ #+BEGIN_SRC sh
+   hugo
+ #+END_SRC
+
+ 目前使用 *hugo v0.21* 版([[https://github.com/spf13/hugo/releases/tag/v0.19][0.19版後就有支援]]), 可以直接吃 org 檔，範例如下：
+
+ #+BEGIN_SRC text
+   #+TITLE: 設定 hugo 和 org-mode
+   #+DATE: 2017-05-29T09:4:78+08:00
+   #+SLUG: setup-hugo-with-orgmode
+   #+TAGS: hugo org-mode
+
+   文章內容… balabala
+ #+END_SRC
+
+ 本來用 *+*, *-* 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+ 像是 title 就是在 ~#+~ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主
+
+ 因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
+
+ 不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。
+
+** Github page
+
+ 用 hugo 這類的靜態網誌產生器就是要放在免費的空間，像是 github page 就是常見的解決方案
+
+ + 先在 github 開好 repo 並且把相關的東西加到 git 裡面
+
+ #+BEGIN_SRC sh
+   git init .
+   git add -A
+   git commit -m "Init blog"
+ #+END_SRC
+
+ + 調整產生的目錄
+
+ 設定檔 ~config.toml~ 中把產生的目標目錄改成 ~docs~ 這樣就不用製作 ~gh-page~ 這個特別的 branch。
+
+ #+BEGIN_SRC sh
+   publishDir = "docs"
+ #+END_SRC
+
+ + 設定好上傳的目標，並且上傳
+
+ 記得先用 ~hugo~ 產生出靜態網頁
+
+ #+BEGIN_SRC sh
+   git remote add origin <your_repo>
+   git push origin master
+ #+END_SRC
+
+ + github repo 設定
+
+ 在 Settings > Options > Github Pages，把 Source 選為 *master branch /docs folder* 。
+
+ 若使用這個 docs 目錄的話 CNAME 之類的也要放在其之下，而且只能是 docs 這個資料夾名稱。

@@ -1,0 +1,21 @@
+#+hugo_base_dir: ../
+#+seq_todo: TODO DRAFT DONE
+#+property: header-args :eval no
+
+#+TITLE: sort Xcode project
+#+DATE: <2013-11-07 11:47:00>
+#+hugo_tags: xcode perl
+
+I found this perl script can sort Xcode Project
+
+[[https://github.com/WebKit/webkit/blob/master/Tools/Scripts/sort-Xcode-project-file][sort-Xcode-project-file]]
+
+just download it and run it
+
+#+BEGIN_SRC bash
+    $ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file
+    $ chmod +x sort-Xcode-project-file
+    $ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj
+#+END_SRC
+
+you need to change MyProject to you xcode project name
