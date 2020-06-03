@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Editor on Superbil.nil</title>
+    <title>editor on Superbil.nil</title>
     <link>https://blog.superbil.org/tags/editor/</link>
-    <description>Recent content in Editor on Superbil.nil</description>
+    <description>Recent content in editor on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 03 Jan 2014 14:28:00 +0800</lastBuildDate>

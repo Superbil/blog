@@ -1,6 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/hugo/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/org-mode/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/posts/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/</loc>
+    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
+  </url>
   
   <url>
     <loc>https://blog.superbil.org/posts/setup-hugo/</loc>
@@ -13,8 +33,48 @@
   </url>
   
   <url>
+    <loc>https://blog.superbil.org/</loc>
+    <lastmod>2017-05-29T02:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/ios/</loc>
+    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/uitableview/</loc>
+    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/xib/</loc>
+    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/</loc>
     <lastmod>2014-11-05T11:25:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/launchctl/</loc>
+    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/launchd/</loc>
+    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/mac/</loc>
+    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/rsync/</loc>
+    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
   </url>
   
   <url>
@@ -23,8 +83,38 @@
   </url>
   
   <url>
+    <loc>https://blog.superbil.org/tags/editor/</loc>
+    <lastmod>2014-01-03T14:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/xcode/</loc>
+    <lastmod>2014-01-03T14:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.superbil.org/posts/xcode-5-comment-mark/</loc>
     <lastmod>2014-01-03T14:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/xcode5/</loc>
+    <lastmod>2014-01-03T14:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/bash/</loc>
+    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/build/</loc>
+    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/lipo/</loc>
+    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
   </url>
   
   <url>
@@ -33,8 +123,28 @@
   </url>
   
   <url>
+    <loc>https://blog.superbil.org/tags/clang/</loc>
+    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/emacs/</loc>
+    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/homebrew/</loc>
+    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</loc>
     <lastmod>2013-11-19T18:15:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.superbil.org/tags/perl/</loc>
+    <lastmod>2013-11-07T11:47:00+08:00</lastmod>
   </url>
   
   <url>
@@ -43,151 +153,17 @@
   </url>
   
   <url>
+    <loc>https://blog.superbil.org/tags/cocoa/</loc>
+    <lastmod>2013-09-05T17:40:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.superbil.org/posts/ios-enter-background/</loc>
     <lastmod>2013-09-05T17:40:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.superbil.org/tags/bash/</loc>
-    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/build/</loc>
-    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.superbil.org/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/clang/</loc>
-    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/cocoa/</loc>
-    <lastmod>2013-09-05T17:40:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/editor/</loc>
-    <lastmod>2014-01-03T14:28:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/emacs/</loc>
-    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/homebrew/</loc>
-    <lastmod>2013-11-19T18:15:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/hugo/</loc>
-    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/ios/</loc>
-    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/launchctl/</loc>
-    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/launchd/</loc>
-    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/lipo/</loc>
-    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/mac/</loc>
-    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/org-mode/</loc>
-    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/perl/</loc>
-    <lastmod>2013-11-07T11:47:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/posts/</loc>
-    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/rsync/</loc>
-    <lastmod>2014-05-15T18:34:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/</loc>
-    <lastmod>2017-05-29T06:37:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/</loc>
-    <lastmod>2013-12-10T17:05:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/uitableview/</loc>
-    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/xcode/</loc>
-    <lastmod>2013-11-07T11:47:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/xcode5/</loc>
-    <lastmod>2014-01-03T14:28:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.superbil.org/tags/xib/</loc>
-    <lastmod>2014-11-05T11:25:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

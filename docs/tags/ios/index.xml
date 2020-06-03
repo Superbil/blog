@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ios on Superbil.nil</title>
+    <title>iOS on Superbil.nil</title>
     <link>https://blog.superbil.org/tags/ios/</link>
-    <description>Recent content in Ios on Superbil.nil</description>
+    <description>Recent content in iOS on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 05 Nov 2014 11:25:00 +0800</lastBuildDate>
@@ -44,7 +44,7 @@ PS.本來想用別的語言實作的，但是後來覺得 bash 的普及性比�
       
       <guid>https://blog.superbil.org/posts/ios-enter-background/</guid>
       <description>If yout want to do something in background&amp;hellip;
-__block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... });</description>
+__block UIBackgroundTaskIdentifier backgroundId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ [[UIApplication sharedApplication] endBackgroundTask:backgroundId]; backgroundId = UIBackgroundTaskInvalid; }]; dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^{ // do some thing you want to ... }); </description>
     </item>
     
   </channel>

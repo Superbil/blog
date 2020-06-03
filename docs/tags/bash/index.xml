@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bash on Superbil.nil</title>
+    <title>bash on Superbil.nil</title>
     <link>https://blog.superbil.org/tags/bash/</link>
-    <description>Recent content in Bash on Superbil.nil</description>
+    <description>Recent content in bash on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 10 Dec 2013 17:05:00 +0800</lastBuildDate>
