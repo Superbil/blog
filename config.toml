@@ -5,7 +5,6 @@ publishDir = "docs"
 theme = "beautifulhugo"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
-googleAnalytics = "UA-52601-22"
 disqusShortname = "superbil-nil"
 
 SectionPagesMenu = "main"
@@ -31,3 +30,4 @@ SectionPagesMenu = "main"
   comments = true
   useHLJS = true
   hideAuthor = true
+  googleTagManager = "G-1HEMVG7BY3"
