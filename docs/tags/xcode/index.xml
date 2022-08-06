@@ -6,11 +6,7 @@
     <description>Recent content in xcode on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 03 Jan 2014 14:28:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.superbil.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 07 Nov 2013 11:47:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sort Xcode project</title>
       <link>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</link>

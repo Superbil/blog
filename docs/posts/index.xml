@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 29 May 2017 06:37:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.superbil.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 May 2017 06:37:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>設定 hugo 和 org-mode</title>
       <link>https://blog.superbil.org/posts/setup-hugo/</link>
@@ -18,10 +14,12 @@
       
       <guid>https://blog.superbil.org/posts/setup-hugo/</guid>
       <description>設定 hugo 而且用 org-mode 當作來源
-如何做  安裝 hugo  brew install hugo  開新專案  hugo new site blog   安裝佈景
+如何做 安裝 hugo brew install hugo 開新專案 hugo new site blog 安裝佈景
 我用 git submodule 來解決這個記錄
-  git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~  建立新文章  hugo new post/new-post.org  產生網站  hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
-#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala 本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</description>
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~ 建立新文章 hugo new post/new-post.org 產生網站 hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
+#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala 本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主
+因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
+不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。</description>
     </item>
     
     <item>
@@ -33,7 +31,7 @@
       <description>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
 在 UITableView 的 viewDidLoad 裡面建立好相關的參照
 - (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&amp;#34;MyTableViewCell&amp;#34; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; } 再建立 cell 時候，大概像這樣使用
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&amp;#34;MyCell&amp;#34; forIndexPath:indexPath]; // do cell things ...  return cell; } 然後執行之後會出錯，大概會看到像這樣的錯誤
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&amp;#34;MyCell&amp;#34; forIndexPath:indexPath]; // do cell things ... return cell; } 然後執行之後會出錯，大概會看到像這樣的錯誤
 *** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &amp;#39;NSInternalInconsistencyException&amp;#39;, reason: &amp;#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&amp;#39; 原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException</description>
     </item>
     

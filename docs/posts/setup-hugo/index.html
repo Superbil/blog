@@ -1,47 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
   <head>
+    
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>設定 hugo 和 org-mode</title>
-  <meta property="og:title" content="設定 hugo 和 org-mode" />
-  <meta name="twitter:title" content="設定 hugo 和 org-mode" />
-  <meta name="description" content="設定 hugo 而且用 org-mode 當作來源">
-  <meta property="og:description" content="設定 hugo 而且用 org-mode 當作來源">
-  <meta name="twitter:description" content="設定 hugo 而且用 org-mode 當作來源">
-  <meta name="author" content=""/>
-  <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://blog.superbil.org/posts/setup-hugo/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Superbil.nil" />
-
-  <meta name="generator" content="Hugo 0.70.0" />
-  <link rel="canonical" href="https://blog.superbil.org/posts/setup-hugo/" />
-  <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://blog.superbil.org/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://blog.superbil.org/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" />
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52601-22', 'auto');
-	
-	ga('send', 'pageview');
+  <title>設定 hugo 和 org-mode - Superbil.nil</title>
+  <meta name="description" content="設定 hugo 而且用 org-mode 當作來源"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Superbil.nil",
+    
+    "url": "https:\/\/blog.superbil.org\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/blog.superbil.org\/"
+  
+  
+  
+  
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/blog.superbil.org\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/blog.superbil.org\/posts\/setup-hugo\/",
+          "name": "設定 hugo 和 org mode"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "[Superbil]"
+  },
+  "headline": "設定 hugo 和 org-mode",
+  "description" : "設定 hugo 而且用 org-mode 當作來源",
+  "inLanguage" : "en",
+  "wordCount":  145 ,
+  "datePublished" : "2017-05-29T06:37:00",
+  "dateModified" : "2017-05-29T06:37:00",
+  "image" : "https:\/\/blog.superbil.org\/",
+  "keywords" : [ "hugo, org-mode" ],
+  "mainEntityOfPage" : "https:\/\/blog.superbil.org\/posts\/setup-hugo\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/blog.superbil.org\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/blog.superbil.org\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-</head>
+<meta property="og:title" content="設定 hugo 和 org-mode" />
+<meta property="og:description" content="設定 hugo 而且用 org-mode 當作來源">
+<meta property="og:url" content="https://blog.superbil.org/posts/setup-hugo/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Superbil.nil" />
 
+  <meta name="twitter:title" content="設定 hugo 和 org-mode" />
+  <meta name="twitter:description" content="設定 hugo 而且用 org-mode 當作來源">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.101.0" />
+  <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.superbil.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.superbil.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HEMVG7BY3"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-1HEMVG7BY3');
+</script>
+
+
+  </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
@@ -83,11 +146,7 @@ if (!doNotTrack) {
       </ul>
     </div>
 
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        
-      </div>
-    </div>
+    
 
   </div>
 </nav>
@@ -96,9 +155,58 @@ if (!doNotTrack) {
 
 
     
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
   
   
   
+
+
 
 
 
@@ -107,63 +215,67 @@ if (!doNotTrack) {
 
   <header class="header-section ">
     
+    
     <div class="intro-header no-img">
-      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="posts-heading">
-              <h1>設定 hugo 和 org-mode</h1>
-                
-                
+              
+                <h1>設定 hugo 和 org-mode</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
             </div>
           </div>
         </div>
       </div>
     </div>
+  
   </header>
 
 
     
-<div class="container">
+<div class="container" role="main">
   <div class="row">
-
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
       <article role="main" class="blog-post">
         <p>設定 <a href="https://gohugo.io/">hugo</a> 而且用 org-mode 當作來源</p>
 <h2 id="如何做">如何做</h2>
 <ul>
 <li>安裝 hugo</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">brew install hugo
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install hugo
+</span></span></code></pre></div><ul>
 <li>開新專案</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo new site blog
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new site blog
+</span></span></code></pre></div><ul>
 <li>
 <p>安裝佈景</p>
 <p>我用 git submodule 來解決這個記錄</p>
 </li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+</span></span></code></pre></div><ul>
 <li>建立新文章</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo new post/new-post.org
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new post/new-post.org
+</span></span></code></pre></div><ul>
 <li>產生網站</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">hugo
-</code></pre></div><p>目前使用 <strong>hugo v0.21</strong> 版(<a href="https://github.com/spf13/hugo/releases/tag/v0.19">0.19版後就有支援</a>), 可以直接吃 org 檔，範例如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">#+TITLE: 設定 hugo 和 org-mode
-#+DATE: 2017-05-29T09:4:78+08:00
-#+SLUG: setup-hugo-with-orgmode
-#+TAGS: hugo org-mode
-
-文章內容… balabala
-</code></pre></div><p>本來用 <strong>+</strong>, <strong>-</strong> 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>目前使用 <strong>hugo v0.21</strong> 版(<a href="https://github.com/spf13/hugo/releases/tag/v0.19">0.19版後就有支援</a>), 可以直接吃 org 檔，範例如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+TITLE: 設定 hugo 和 org-mode
+</span></span><span class="line"><span class="cl">#+DATE: 2017-05-29T09:4:78+08:00
+</span></span><span class="line"><span class="cl">#+SLUG: setup-hugo-with-orgmode
+</span></span><span class="line"><span class="cl">#+TAGS: hugo org-mode
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">文章內容… balabala
+</span></span></code></pre></div><p>本來用 <strong>+</strong>, <strong>-</strong> 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
 像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</p>
 <p>因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的</p>
 <p>不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。</p>
@@ -172,53 +284,61 @@ if (!doNotTrack) {
 <ul>
 <li>先在 github 開好 repo 並且把相關的東西加到 git 裡面</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git init .
-git add -A
-git commit -m <span class="s2">&#34;Init blog&#34;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git init .
+</span></span><span class="line"><span class="cl">git add -A
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Init blog&#34;</span>
+</span></span></code></pre></div><ul>
 <li>調整產生的目錄</li>
 </ul>
 <p>設定檔 <code>config.toml</code> 中把產生的目標目錄改成 <code>docs</code> 這樣就不用製作 <code>gh-page</code> 這個特別的 branch。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">publishDir</span> <span class="o">=</span> <span class="s2">&#34;docs&#34;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">publishDir</span> <span class="o">=</span> <span class="s2">&#34;docs&#34;</span>
+</span></span></code></pre></div><ul>
 <li>設定好上傳的目標，並且上傳</li>
 </ul>
 <p>記得先用 <code>hugo</code> 產生出靜態網頁</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git remote add origin &lt;your_repo&gt;
-git push origin master
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git remote add origin &lt;your_repo&gt;
+</span></span><span class="line"><span class="cl">git push origin master
+</span></span></code></pre></div><ul>
 <li>github repo 設定</li>
 </ul>
 <p>在 Settings &gt; Options &gt; Github Pages，把 Source 選為 <strong>master branch /docs folder</strong> 。</p>
 <p>若使用這個 docs 目錄的話 CNAME 之類的也要放在其之下，而且只能是 docs 這個資料夾名稱。</p>
 
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://blog.superbil.org//tags/hugo/">hugo</a>&nbsp;
+            
+              <a href="https://blog.superbil.org//tags/org-mode/">org-mode</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
       </article>
 
       
-      <span class="post-meta">
-        
-        #<a href="/tags/hugo">hugo</a>&nbsp;
-        
-        #<a href="/tags/org-mode">org-mode</a>&nbsp;
-        
-      </span>
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/" data-toggle="tooltip" data-placement="top" title="從 XIB 建立 UITableViewCell 的問題">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
       
 
-      <ul class="pager blog-pager">
-        
-        <li class="previous">
-          <a href="https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/" data-toggle="tooltip" data-placement="top" title="從 XIB 建立 UITableViewCell 的問題">&larr; Previous Post</a>
-        </li>
-        
-        
-      </ul>
 
       
-  
-    <div class="disqus-comments">
-      <div id="disqus_thread"></div>
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -236,16 +356,18 @@ git push origin master
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-  
-
-
+          </div>
+          
+        
+        
+      
 
     </div>
   </div>
 </div>
 
-    <footer>
+      
+<footer>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -255,8 +377,11 @@ git push origin master
         </ul>
         <p class="credits copyright text-muted">
           
-          &nbsp;&bull;&nbsp;
-          2017
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2017
+          
 
           
             &nbsp;&bull;&nbsp;
@@ -265,27 +390,32 @@ git push origin master
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.70.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="https://gohugo.io">Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>
     </div>
   </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script src="https://blog.superbil.org/js/main.js"></script>
 <script src="https://blog.superbil.org/js/highlight.min.js"></script>
 <script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.superbil.org/js/load-photoswipe.js"></script>
 
 
 
 
 
+
+
+
+
+    
   </body>
 </html>
 

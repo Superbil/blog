@@ -5,10 +5,6 @@
     <link>https://blog.superbil.org/categories/</link>
     <description>Recent content in Categories on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    
-	<atom:link href="https://blog.superbil.org/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-tw</language><atom:link href="https://blog.superbil.org/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

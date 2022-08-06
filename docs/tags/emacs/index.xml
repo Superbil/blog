@@ -6,11 +6,7 @@
     <description>Recent content in emacs on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 19 Nov 2013 18:15:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.superbil.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 Nov 2013 18:15:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 emacs 中呼叫 clang 的自動完成</title>
       <link>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in Tags on Superbil.nil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 29 May 2017 06:37:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.superbil.org/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 May 2017 06:37:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo</title>
       <link>https://blog.superbil.org/tags/hugo/</link>
@@ -102,15 +98,6 @@
     </item>
     
     <item>
-      <title>xcode</title>
-      <link>https://blog.superbil.org/tags/xcode/</link>
-      <pubDate>Fri, 03 Jan 2014 14:28:00 +0800</pubDate>
-      
-      <guid>https://blog.superbil.org/tags/xcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>XCode5</title>
       <link>https://blog.superbil.org/tags/xcode5/</link>
       <pubDate>Fri, 03 Jan 2014 14:28:00 +0800</pubDate>
@@ -179,6 +166,15 @@
       <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
       
       <guid>https://blog.superbil.org/tags/perl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xcode</title>
+      <link>https://blog.superbil.org/tags/xcode/</link>
+      <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
+      
+      <guid>https://blog.superbil.org/tags/xcode/</guid>
       <description></description>
     </item>
     
