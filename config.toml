@@ -31,3 +31,4 @@ SectionPagesMenu = "main"
   Content = false
   comments = true
   useHLJS = true
+  hideAuthor = true
