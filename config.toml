@@ -3,7 +3,6 @@ languageCode = "zh-tw"
 title = "Superbil.nil"
 publishDir = "docs"
 theme = "beautifulhugo"
-pygmentsStyle = "trac"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
 googleAnalytics = "UA-52601-22"
