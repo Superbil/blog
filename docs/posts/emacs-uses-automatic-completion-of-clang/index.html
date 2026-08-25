@@ -1,13 +1,36 @@
+
+
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-    
+  <head><script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var dark = false;
+        if (saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          dark = true;
+        } else if (saved === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          dark = true;
+        }
+        var hljsDark = document.getElementById('hljs-dark');
+        if (hljsDark) {
+          hljsDark.disabled = !dark;
+        }
+      })();
+    </script>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>在 emacs 中呼叫 clang 的自動完成 - Superbil.nil</title>
+ 
+
+
+  <title>在 emacs 中呼叫 clang 的自動完成</title>
+
   <meta name="description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
 安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
 (require &#39;auto-complete-clang-async)
@@ -25,97 +48,118 @@
 /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來
 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
-  <meta name="author" content="Superbil"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "Superbil.nil",
-    
-    "url": "https:\/\/blog.superbil.org\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "https:\/\/blog.superbil.org\/"
-  
-  
-  
-  
-}
-</script>
+  <meta name="author" content="Superbil"/>
+
+
+
+
 <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/blog.superbil.org\/",
-          "name": "home"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://blog.superbil.org/#website",
+      "@type": "WebSite",
+      "name": "Superbil.nil",
+      "publisher": {
+        "@id": "https://blog.superbil.org/#organization"
+      },
+      "url": "https://blog.superbil.org/"
+    },
+    {
+      "@id": "https://blog.superbil.org/#organization",
+      "@type": "Organization",
+      "name": "Superbil",
+      "url": "https://blog.superbil.org/"
+    },
+    {
+      "@id": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://blog.superbil.org/",
+          "name": "Home",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://blog.superbil.org/posts/",
+          "name": "Posts",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/",
+          "name": "在 emacs 中呼叫 clang 的自動完成",
+          "position": 3
         }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/blog.superbil.org\/posts\/emacs-uses-automatic-completion-of-clang\/",
-          "name": "在 emacs 中呼叫 clang 的自動完成"
+      ]
+    },
+    {
+      "@id": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/#webpage",
+      "@type": "WebPage",
+      "breadcrumb": {
+        "@id": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/#breadcrumb"
+      },
+      "isPartOf": {
+        "@id": "https://blog.superbil.org/#website"
+      },
+      "name": "在 emacs 中呼叫 clang 的自動完成",
+      "url": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/"
+    },
+    {
+      "@id": "https://blog.superbil.org/#author-superbil",
+      "@type": "Person",
+      "name": "Superbil",
+      "url": "https://blog.superbil.org/"
+    },
+    {
+      "@id": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/#article",
+      "@type": "Article",
+      "author": [
+        {
+          "@id": "https://blog.superbil.org/#author-superbil"
         }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "[Superbil]"
-  },
-  "headline": "在 emacs 中呼叫 clang 的自動完成",
-  "description" : "一開始是在 homebrew 發現這個 emacs-clang-complete-async東西\n安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定\n(require \u0026#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable \u0026#34;\/usr\/local\/opt\/emacs-clang-complete-async\/bin\/clang-complete\u0026#34;) (setq ac-sources \u0026#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook \u0026#39;c-mode-common-hook \u0026#39;ac-cc-mode-setup) (add-hook \u0026#39;auto-complete-mode-hook \u0026#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) \/usr\/local\/opt\/emacs-clang-complete-async\/bin\/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑\n不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD\n",
-  "inLanguage" : "en",
-  "wordCount":  48 ,
-  "datePublished" : "2013-11-19T18:15:00",
-  "dateModified" : "2013-11-19T18:15:00",
-  "image" : "https:\/\/blog.superbil.org\/",
-  "keywords" : [ "emacs, clang, Homebrew" ],
-  "mainEntityOfPage" : "https:\/\/blog.superbil.org\/posts\/emacs-uses-automatic-completion-of-clang\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/blog.superbil.org\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/blog.superbil.org\/",
-        "height" :  60 ,
-        "width" :  60
+      ],
+      "dateCreated": "2013-11-19T18:15:00+08:00",
+      "dateModified": "2013-11-19T18:15:00+08:00",
+      "datePublished": "2013-11-19T18:15:00+08:00",
+      "description": "一開始是在 homebrew 發現這個 emacs-clang-complete-async東西\n安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定\n(require 'auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable \"/usr/local/opt/emacs-clang-complete-async/bin/clang-complete\") (setq ac-sources '(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook 'c-mode-common-hook 'ac-cc-mode-setup) (add-hook 'auto-complete-mode-hook 'ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑\n不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD\n",
+      "headline": "在 emacs 中呼叫 clang 的自動完成",
+      "inLanguage": "en",
+      "keywords": [
+        "emacs",
+        "clang",
+        "Homebrew"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/#webpage"
+      },
+      "publisher": {
+        "@id": "https://blog.superbil.org/#organization"
+      },
+      "wordCount": 48
     }
-  }
+  ]
 }
 </script>
-
-<meta property="og:title" content="在 emacs 中呼叫 clang 的自動完成" />
-<meta property="og:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
+<meta property="og:url" content="https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/">
+	<meta property="og:site_name" content="Superbil.nil">
+	<meta property="og:title" content="在 emacs 中呼叫 clang 的自動完成">
+	<meta property="og:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
 安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
-(require &#39;auto-complete-clang-async)
-(defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;)
-  (setq ac-sources &#39;(ac-source-clang-async))
-  (ac-clang-launch-completion-process))
-
-(defun my-ac-config ()
-  (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup)
-  (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup)
-  (global-auto-complete-mode t))
-
-(my-ac-config)
-/usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來
-PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
+(require &#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&#34;) (setq ac-sources &#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup) (add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD">
-<meta property="og:url" content="https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Superbil.nil" />
-
+	<meta property="og:locale" content="zh_tw">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2013-11-19T18:15:00+08:00">
+		<meta property="article:modified_time" content="2013-11-19T18:15:00+08:00">
+		<meta property="article:tag" content="Emacs">
+		<meta property="article:tag" content="Clang">
+		<meta property="article:tag" content="Homebrew">
+<link rel="canonical" href="https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/" />
   <meta name="twitter:title" content="在 emacs 中呼叫 clang 的自動完成" />
   <meta name="twitter:description" content="一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
 安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
@@ -123,72 +167,93 @@ PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 (defun ac-cc-mode-setup ()
   (setq ac-clang-complete-executable …">
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="generator" content="Hugo 0.165.0">
-  <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.superbil.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://blog.superbil.org/css/highlight.min.css" /><link rel="stylesheet" href="https://blog.superbil.org/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HEMVG7BY3"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
+<meta name="generator" content="Hugo 0.165.0">
+<link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil">
 
- gtag('config', 'G-1HEMVG7BY3');
-</script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css" integrity="sha384-UA8juhPf75SzzAMA/4fo3yOU7sBJ0om7SCD2GHq0fZqZco6tr1UCV7nUbk9J90JM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/brands.css" integrity="sha384-+PvcAGLOWIanfjuRoscHUyZB100N7wP779T8D3ao0FniyFFKMw9MIJpgtJO3+pdF" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/fontawesome.css" integrity="sha384-mj4mLShEAyWi4Bui9LmFkAjPYWof6WrG8DfS8ebHhjm4/MClMqMMHpQzehNk5HeM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/regular.css" integrity="sha384-eS8Ja07iO8AOH11Hzegc5aZyN8CpY+oFwClH6MIlOKUOA3J4Oqjt8Xia9VUSU0GB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/solid.css" integrity="sha384-LpGibDKKReBRP3epUOaN9WBgkrQ1pJIvrrTugkYxVQgDvYuMCRaXk6YkrZ/h3aWk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/svg.css" integrity="sha384-V18zH+yIEosaHAByV0h4dqHHMPzBxZ7CYz9GQ1YsLTE9QIkEme0jAw9Qir7aIFT+" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/svg-with-js.css" integrity="sha384-K25UPiwKhSAcEPQskU+UjXpz4iScCTNX5tcEpAGp1hQFNkOoIIwZiV69SfEfaRjK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/v4-font-face.css" integrity="sha384-YFnAdl87B7pW+Vhp7w9pvA8ZdBL8DQni4/++wrZ0f7o/Sc0pyThczmxZk9xLyc0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/v4-shims.css" integrity="sha384-FnTDI00psVcN3KkfAip/6yRCeN17N3R7HZoAj+2+nttp8n1/vHfYUWvlscoUUhGJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.2.0/css/v5-font-face.css" integrity="sha384-FUMXkSpZU/e6Ua2owr0Mktp/gtxxiK1OgCS1vDr8Lsz+gbyDFMSiKeHBRa07EjDn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/print.css" media="print" /><link rel="stylesheet" href="/css/dark.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css" integrity="sha384-eFTL69TLRZTkNfYZOLM+G04821K1qZao/4QLJbet1pP4tcF+fdXq/9CdqAbWRl/L" crossorigin="anonymous"><link id="hljs-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css" integrity="sha384-wH75j6z1lH97ZOpMOInqhgKzFkAInZPPSPlZpYKYTOqsaizPvhQZmAtLcPKXpLyH" crossorigin="anonymous"><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="/css/toc.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
 
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <nav class="navbar navbar-expand-md navbar-light navbar-custom fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">開關導覽</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+    <a class="navbar-brand" href="/">Superbil.nil</a>
+    <div class="d-flex align-items-center">
+      
+      
+      
+      
+      
+      <button class="theme-toggle" id="theme-toggle" aria-label="主題" data-bs-toggle="tooltip" data-bs-placement="bottom" data-tooltip-auto="自動（跟隨系統）" data-tooltip-light="淺色模式" data-tooltip-dark="深色模式" title="自動（跟隨系統）">
+        <span class="fas fa-adjust" id="theme-icon-auto"></span>
+        <span class="fas fa-sun" id="theme-icon-light" style="display: none;"></span>
+        <span class="fas fa-moon" id="theme-icon-dark" style="display: none;"></span>
       </button>
-      <a class="navbar-brand" href="https://blog.superbil.org/">Superbil.nil</a>
+      
+      
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="開關導覽">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navbar-nav ms-auto">
         
           
-            <li>
-              <a title="about" href="/about/">about</a>
+          
+            <li class="nav-item" >
+              <a class="nav-link" title="關於" href="/about/">關於</a>
             </li>
           
         
           
-            <li>
-              <a title="Posts" href="/posts/">Posts</a>
+          
+            <li class="nav-item" >
+              <a class="nav-link" title="Posts" href="/posts/">Posts</a>
             </li>
           
         
           
-            <li>
-              <a title="Sandboxes" href="/sandbox/">Sandboxes</a>
+          
+            <li class="nav-item" >
+              <a class="nav-link" title="Sandboxes" href="/sandbox/">Sandboxes</a>
             </li>
           
         
           
-            <li>
-              <a title="tags" href="/tags/">tags</a>
+          
+            <li class="nav-item" >
+              <a class="nav-link" title="標籤" href="/tags/">標籤</a>
             </li>
           
         
 
-        
+          
 
         
       </ul>
+      
+
     </div>
 
+    
+    
+      
     
 
   </div>
@@ -197,59 +262,11 @@ PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 
 
 
+
+
+
+
     
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-  
-  
-  
-
-
 
 
 
@@ -262,15 +279,37 @@ PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
     <div class="intro-header no-img">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="col-md-10 offset-md-1">
             <div class="posts-heading">
+              
               
                 <h1>在 emacs 中呼叫 clang 的自動完成</h1>
               
               
-                <hr class="small">
               
               
+
+
+              
+                <span class="post-meta">
+  
+  
+  
+  
+     
+  
+  
+  
+    <i class="fas fa-calendar"></i>&nbsp;發表於 November 19, 2013
+    
+    
+  
+  
+  
+  
+  
+</span>
+
               
             </div>
           </div>
@@ -278,15 +317,22 @@ PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
       </div>
     </div>
   
+    
+
   </header>
 
 
     
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a>東西</p>
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <article role="main" class="blog-post">
+          
+
+
+          
+
+          <p>一開始是在 <a href="http://brew.sh/">homebrew</a> 發現這個 <a href="https://github.com/Golevka/emacs-clang-complete-async">emacs-clang-complete-async</a>東西</p>
 <p>安裝完之後，再參照 <a href="https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org">github上的說明</a>，在自己的 init.el 裡面放入以下的設定</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cl" data-lang="cl"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;auto-complete-clang-async</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">ac-cc-mode-setup</span> <span class="p">()</span>
@@ -304,16 +350,15 @@ PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
 PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路徑</p>
 <p>不過目前只能當下的檔案，可以再使用 <code>M-x ac-clang-set-cflags</code> 來設定 cFlags，不過目前還沒有成功 XD</p>
 
+          
+          
+
 
         
+        
           <div class="blog-tags">
-            
-              <a href="https://blog.superbil.org//tags/emacs/">emacs</a>&nbsp;
-            
-              <a href="https://blog.superbil.org//tags/clang/">clang</a>&nbsp;
-            
-              <a href="https://blog.superbil.org//tags/homebrew/">Homebrew</a>&nbsp;
-            
+            <span>Tags: </span>
+            <a href="/tags/emacs/">emacs</a>&nbsp;<a href="/tags/clang/">clang</a>&nbsp;<a href="/tags/homebrew/">Homebrew</a>&nbsp;
           </div>
         
 
@@ -323,15 +368,29 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
       </article>
 
       
-        <ul class="pager blog-pager">
+        
+          <a href="/posts/sort-xcode-project-file-and-directory/" class="nav-side-arrow nav-side-prev" title="sort Xcode project" aria-label="上一篇: sort Xcode project">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+        
+        
+          <a href="/posts/build-lame-library-for-ios/" class="nav-side-arrow nav-side-next" title="產生 lame for iOS" aria-label="下一篇: 產生 lame for iOS">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        
+        <ul class="post-pager blog-post-pager">
           
-            <li class="previous">
-              <a href="https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/" data-toggle="tooltip" data-placement="top" title="sort Xcode project">&larr; 上一篇</a>
+            <li class="pager-prev">
+              <a href="/posts/sort-xcode-project-file-and-directory/" data-bs-toggle="tooltip" data-bs-placement="top" title="sort Xcode project"><i class="fas fa-chevron-left"></i> 上一篇</a>
             </li>
           
+          <li class="pager-center">
+            
+
+          </li>
           
-            <li class="next">
-              <a href="https://blog.superbil.org/posts/build-lame-library-for-ios/" data-toggle="tooltip" data-placement="top" title="產生 lame for iOS">下一篇 &rarr;</a>
+            <li class="pager-next">
+              <a href="/posts/build-lame-library-for-ios/" data-bs-toggle="tooltip" data-bs-placement="top" title="產生 lame for iOS">下一篇 <i class="fas fa-chevron-right"></i></a>
             </li>
           
         </ul>
@@ -339,26 +398,42 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
 
 
       
-        
+      
+
+      
+
+      
+      
+      
           
           <div class="disqus-comments">
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_shortname = 'superbil-nil';
-  var disqus_identifier = 'https:\/\/blog.superbil.org\/posts\/emacs-uses-automatic-completion-of-clang\/';
-  var disqus_title = '在 emacs 中呼叫 clang 的自動完成';
-  var disqus_url = 'https:\/\/blog.superbil.org\/posts\/emacs-uses-automatic-completion-of-clang\/';
-
-  (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    var disqus_shortname = 'superbil-nil';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+            
+  
+    <div class="comments">
+      <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "superbil-nil" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+    </div>
+  
+
 
           </div>
           
@@ -366,16 +441,62 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
         
       
 
+      
+
     </div>
   </div>
 </div>
 
+    
       
 <footer>
   <div class="container">
+    
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="col-md-10 offset-md-1">
         <ul class="list-inline text-center footer-links">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
         </ul>
@@ -384,16 +505,18 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
             
               Superbil
             
+            &nbsp;&bull;&nbsp;
           
-
-          &nbsp;&bull;&nbsp;&copy;
+          &copy;
           
-            2017
+            2013 - 2026
           
 
           
             &nbsp;&bull;&nbsp;
-            <a href="https://blog.superbil.org/">Superbil.nil</a>
+          
+          
+            <a href="/">Superbil.nil</a>
           
         </p>
         
@@ -404,16 +527,23 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
       </div>
     </div>
   </div>
-</footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</footer>
 
-<script src="https://blog.superbil.org/js/main.js"></script>
-<script src="https://blog.superbil.org/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://blog.superbil.org/js/load-photoswipe.js"></script>
+      
+
+      
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.js" integrity="sha384-Tt7wBxLKwSzFVRET4O4U9H6v8MNaQ/CjN2FMP4xFm0ErrFu6aNqoonRVW5W40iGI" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha384-tcspKDb5tWvyRCOWzevlAeQgHeEzYdUHJpcgnIhcP9w4CnfD7DLAcS+k9QzLbRJO" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script><script src="/js/toc.js"></script><script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js" integrity="sha384-RH2xi4eIQ/gjtbs9fUXM68sLSi99C7ZWBRX1vDrVv6GQXRibxXLbwO2NGZB74MbU" crossorigin="anonymous"></script><script> hljs.highlightAll(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js" integrity="sha384-k8EKyYcONphQ7zH4cQ0888JapXwrLTXQl/Ue1/jYgjVYahln1NWpnt2S4IC56LNh" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js" integrity="sha384-IiBVbUz6+U+Tbm/ijO2P0XRwcVzNfrMzloNLkrqHkbi6w5H0v6ie4fI9BIO4SwdK" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
 
 
 
@@ -426,4 +556,3 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
     
   </body>
 </html>
-
