@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Homebrew on Superbil.nil</title>
-    <link>https://blog.superbil.org/tags/homebrew/</link>
-    <description>Recent content in Homebrew on Superbil.nil</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Tue, 19 Nov 2013 18:15:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>在 emacs 中呼叫 clang 的自動完成</title>
-      <link>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</link>
-      <pubDate>Tue, 19 Nov 2013 18:15:00 +0800</pubDate>
-      
-      <guid>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</guid>
-      <description>一開始是在 homebrew 發現這個 emacs-clang-complete-async東西
-安裝完之後，再參照 github上的說明，在自己的 init.el 裡面放入以下的設定
-(require &amp;#39;auto-complete-clang-async) (defun ac-cc-mode-setup () (setq ac-clang-complete-executable &amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;) (setq ac-sources &amp;#39;(ac-source-clang-async)) (ac-clang-launch-completion-process)) (defun my-ac-config () (add-hook &amp;#39;c-mode-common-hook &amp;#39;ac-cc-mode-setup) (add-hook &amp;#39;auto-complete-mode-hook &amp;#39;ac-common-setup) (global-auto-complete-mode t)) (my-ac-config) /usr/local/opt/emacs-clang-complete-async/bin/clang-complete 這個是使用 homebrew 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來 PS. 也可以用 brew --prefix emacs-clang-complete-async 拿到路徑
-不過目前只能當下的檔案，可以再使用 M-x ac-clang-set-cflags 來設定 cFlags，不過目前還沒有成功 XD</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Homebrew on Superbil.nil</title>
+		<link>https://blog.superbil.org/tags/homebrew/</link>
+		<description>Recent content in Homebrew on Superbil.nil</description>
+		<generator>Hugo</generator>
+		<language>zh-tw</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 19 Nov 2013 18:15:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://blog.superbil.org/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>在 emacs 中呼叫 clang 的自動完成</title>
+				<link>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</link>
+				<pubDate>Tue, 19 Nov 2013 18:15:00 +0800</pubDate>
+				<guid>https://blog.superbil.org/posts/emacs-uses-automatic-completion-of-clang/</guid>
+				<description>&lt;p&gt;一開始是在 &lt;a href=&#34;http://brew.sh/&#34;&gt;homebrew&lt;/a&gt; 發現這個 &lt;a href=&#34;https://github.com/Golevka/emacs-clang-complete-async&#34;&gt;emacs-clang-complete-async&lt;/a&gt;東西&lt;/p&gt;&#xA;&lt;p&gt;安裝完之後，再參照 &lt;a href=&#34;https://github.com/Golevka/emacs-clang-complete-async/blob/master/README.org&#34;&gt;github上的說明&lt;/a&gt;，在自己的 init.el 裡面放入以下的設定&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cl&#34; data-lang=&#34;cl&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;auto-complete-clang-async&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ac-cc-mode-setup&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ac-clang-complete-executable&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ac-sources&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ac-source-clang-async&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ac-clang-launch-completion-process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;defun&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;my-ac-config&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-hook&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;c-mode-common-hook&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;ac-cc-mode-setup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-hook&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;auto-complete-mode-hook&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;ac-common-setup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;global-auto-complete-mode&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;my-ac-config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;/usr/local/opt/emacs-clang-complete-async/bin/clang-complete&lt;/code&gt; 這個是使用 &lt;a href=&#34;http://brew.sh/&#34;&gt;homebrew&lt;/a&gt; 安裝的預設路徑，只要把這個參數設對，就會正常的跑起來&#xA;PS. 也可以用 &lt;code&gt;brew --prefix emacs-clang-complete-async&lt;/code&gt; 拿到路徑&lt;/p&gt;&#xA;&lt;p&gt;不過目前只能當下的檔案，可以再使用 &lt;code&gt;M-x ac-clang-set-cflags&lt;/code&gt; 來設定 cFlags，不過目前還沒有成功 XD&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

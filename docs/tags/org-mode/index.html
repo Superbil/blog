@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>org-mode - Superbil.nil</title><script type="application/ld+json">
+  <title>Org-Mode - Superbil.nil</title>
+  <meta name="author" content="Superbil"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -28,14 +29,14 @@
 }
 </script>
 
-<meta property="og:title" content="org-mode" />
+<meta property="og:title" content="Org-Mode" />
 <meta property="og:url" content="https://blog.superbil.org/tags/org-mode/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Superbil.nil" />
 
-  <meta name="twitter:title" content="org-mode" />
+  <meta name="twitter:title" content="Org-Mode" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="generator" content="Hugo 0.101.0" />
+  <meta name="generator" content="Hugo 0.165.0">
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.superbil.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -59,7 +60,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">開關導覽</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -79,6 +80,12 @@
           
             <li>
               <a title="Posts" href="/posts/">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Sandboxes" href="/sandbox/">Sandboxes</a>
             </li>
           
         
@@ -171,7 +178,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="tags-heading">
               
-                <h1>org-mode</h1>
+                <h1>Org-Mode</h1>
               
               
                 <hr class="small">
@@ -206,7 +213,7 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 29, 2017
+  <i class="fas fa-calendar"></i>&nbsp;發表於 May 29, 2017
   
   
   
@@ -218,14 +225,42 @@
     </p>
     <div class="post-entry">
         
-        設定 hugo 而且用 org-mode 當作來源
-如何做 安裝 hugo brew install hugo 開新專案 hugo new site blog 安裝佈景
-我用 git submodule 來解決這個記錄
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~ 建立新文章 hugo new post/new-post.org 產生網站 hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
-#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala 本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主
-因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
-不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。
-        <a href="https://blog.superbil.org/posts/setup-hugo/" class="post-read-more">[Read More]</a>
+        <p>設定 <a href="https://gohugo.io/">hugo</a> 而且用 org-mode 當作來源</p>
+<h2 id="如何做">如何做</h2>
+<ul>
+<li>安裝 hugo</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install hugo
+</span></span></code></pre></div><ul>
+<li>開新專案</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new site blog
+</span></span></code></pre></div><ul>
+<li>
+<p>安裝佈景</p>
+<p>我用 git submodule 來解決這個記錄</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+</span></span></code></pre></div><ul>
+<li>建立新文章</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new post/new-post.org
+</span></span></code></pre></div><ul>
+<li>產生網站</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>目前使用 <strong>hugo v0.21</strong> 版(<a href="https://github.com/spf13/hugo/releases/tag/v0.19">0.19版後就有支援</a>), 可以直接吃 org 檔，範例如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+TITLE: 設定 hugo 和 org-mode
+</span></span><span class="line"><span class="cl">#+DATE: 2017-05-29T09:4:78+08:00
+</span></span><span class="line"><span class="cl">#+SLUG: setup-hugo-with-orgmode
+</span></span><span class="line"><span class="cl">#+TAGS: hugo org-mode
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">文章內容… balabala
+</span></span></code></pre></div><p>本來用 <strong>+</strong>, <strong>-</strong> 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</p>
+<p>因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的</p>
+        <a href="https://blog.superbil.org/posts/setup-hugo/" class="post-read-more">[閱讀全文]</a>
         
     </div>
 
@@ -258,6 +293,10 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
         </ul>
         <p class="credits copyright text-muted">
           
+            
+              Superbil
+            
+          
 
           &nbsp;&bull;&nbsp;&copy;
           
@@ -271,7 +310,7 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          由 <a href="https://gohugo.io">Hugo v0.165.0</a> 提供 &nbsp;&bull;&nbsp; 主題 <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> 移植自 <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

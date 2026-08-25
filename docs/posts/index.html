@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts - Superbil.nil</title><script type="application/ld+json">
+  <title>Posts - Superbil.nil</title>
+  <meta name="author" content="Superbil"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -35,7 +36,7 @@
 
   <meta name="twitter:title" content="Posts" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="generator" content="Hugo 0.101.0" />
+  <meta name="generator" content="Hugo 0.165.0">
   <link rel="alternate" href="https://blog.superbil.org/index.xml" type="application/rss+xml" title="Superbil.nil"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://blog.superbil.org/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -59,7 +60,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">開關導覽</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -79,6 +80,12 @@
           
             <li>
               <a title="Posts" href="/posts/">Posts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Sandboxes" href="/sandbox/">Sandboxes</a>
             </li>
           
         
@@ -206,7 +213,7 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 29, 2017
+  <i class="fas fa-calendar"></i>&nbsp;發表於 May 29, 2017
   
   
   
@@ -218,14 +225,42 @@
     </p>
     <div class="post-entry">
         
-        設定 hugo 而且用 org-mode 當作來源
-如何做 安裝 hugo brew install hugo 開新專案 hugo new site blog 安裝佈景
-我用 git submodule 來解決這個記錄
-git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~ 建立新文章 hugo new post/new-post.org 產生網站 hugo 目前使用 hugo v0.21 版(0.19版後就有支援), 可以直接吃 org 檔，範例如下：
-#+TITLE: 設定 hugo 和 org-mode #+DATE: 2017-05-29T09:4:78+08:00 #+SLUG: setup-hugo-with-orgmode #+TAGS: hugo org-mode 文章內容… balabala 本來用 +, - 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。 像是 title 就是在 #+ 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主
-因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的
-不過還是有一些小問題，像是程式碼區域會多第一行空白，其他功能待測試。
-        <a href="https://blog.superbil.org/posts/setup-hugo/" class="post-read-more">[Read More]</a>
+        <p>設定 <a href="https://gohugo.io/">hugo</a> 而且用 org-mode 當作來源</p>
+<h2 id="如何做">如何做</h2>
+<ul>
+<li>安裝 hugo</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install hugo
+</span></span></code></pre></div><ul>
+<li>開新專案</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new site blog
+</span></span></code></pre></div><ul>
+<li>
+<p>安裝佈景</p>
+<p>我用 git submodule 來解決這個記錄</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo~
+</span></span></code></pre></div><ul>
+<li>建立新文章</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo new post/new-post.org
+</span></span></code></pre></div><ul>
+<li>產生網站</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>目前使用 <strong>hugo v0.21</strong> 版(<a href="https://github.com/spf13/hugo/releases/tag/v0.19">0.19版後就有支援</a>), 可以直接吃 org 檔，範例如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">#+TITLE: 設定 hugo 和 org-mode
+</span></span><span class="line"><span class="cl">#+DATE: 2017-05-29T09:4:78+08:00
+</span></span><span class="line"><span class="cl">#+SLUG: setup-hugo-with-orgmode
+</span></span><span class="line"><span class="cl">#+TAGS: hugo org-mode
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">文章內容… balabala
+</span></span></code></pre></div><p>本來用 <strong>+</strong>, <strong>-</strong> 之類包起來的檔頭已經不用再加上，hugo 會用 org-mode 本身的特別前綴詞去當作關鍵字來使用，這是新版才有的功能。
+像是 title 就是在 <code>#+</code> 之後的字，這個就會拿去當作區域變數來使用；若同時存在會以前面包起來的檔頭為主</p>
+<p>因為用 org-mode 的方式寫，tags 之類的分類只要用空白就好，字串也不用引號包起來，算是非常貼近原生的使用的</p>
+        <a href="https://blog.superbil.org/posts/setup-hugo/" class="post-read-more">[閱讀全文]</a>
         
     </div>
 
@@ -253,7 +288,7 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 5, 2014
+  <i class="fas fa-calendar"></i>&nbsp;發表於 November 5, 2014
   
   
   
@@ -265,12 +300,27 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
     </p>
     <div class="post-entry">
         
-        自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell
-在 UITableView 的 viewDidLoad 裡面建立好相關的參照
-- (void)viewDidLoad { [super viewDidLoad]; [self.tableView registerNib:[UINib nibWithNibName:@&#34;MyTableViewCell&#34; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier]; } 再建立 cell 時候，大概像這樣使用
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@&#34;MyCell&#34; forIndexPath:indexPath]; // do cell things ... return cell; } 然後執行之後會出錯，大概會看到像這樣的錯誤
-*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116 *** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39; 原因是使用 dequeueReusableCellWithIdentifier:forIndexPath: 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 NSInternalInconsistencyException
-        <a href="https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/" class="post-read-more">[Read More]</a>
+        <p>自己試著使用 XIB 把不同東西切割出來，像是 UITableViewCell</p>
+<p>在 UITableView 的 <code>viewDidLoad</code> 裡面建立好相關的參照</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-objc" data-lang="objc"><span class="line"><span class="cl"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nb">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">tableView</span> <span class="nl">registerNib</span><span class="p">:[</span><span class="n">UINib</span> <span class="nl">nibWithNibName</span><span class="p">:</span><span class="s">@&#34;MyTableViewCell&#34;</span>
+</span></span><span class="line"><span class="cl">                                             <span class="nl">bundle</span><span class="p">:[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">       <span class="nl">forCellReuseIdentifier</span><span class="p">:</span><span class="n">cellIdentifier</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>再建立 cell 時候，大概像這樣使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-objc" data-lang="objc"><span class="line"><span class="cl"><span class="p">-</span> <span class="p">(</span><span class="n">UITableViewCell</span> <span class="o">*</span><span class="p">)</span><span class="nf">tableView:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="nv">tableView</span> <span class="nf">cellForRowAtIndexPath:</span><span class="p">(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPath</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyTableViewCell</span> <span class="o">*</span><span class="n">cell</span> <span class="o">=</span> <span class="p">[</span><span class="n">tableView</span> <span class="nl">dequeueReusableCellWithIdentifier</span><span class="p">:</span><span class="s">@&#34;MyCell&#34;</span> <span class="nl">forIndexPath</span><span class="p">:</span><span class="n">indexPath</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// do cell things ...
+</span></span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">cell</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>然後執行之後會出錯，大概會看到像這樣的錯誤</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">*** Assertion failure in -[UITableView dequeueReusableCellWithIdentifier:forIndexPath:], /SourceCache/UIKit_Sim/UIKit-3318.16.14/UITableView.m:6116
+</span></span><span class="line"><span class="cl">*** Terminating app due to uncaught exception &#39;NSInternalInconsistencyException&#39;, reason: &#39;unable to dequeue a cell with identifier MyTableViewCell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard&#39;
+</span></span></code></pre></div><p>原因是使用 <code>dequeueReusableCellWithIdentifier:forIndexPath:</code> 會去 UITableView 查用把 XIB 裡面要的東西建立起來，這個動作會順便檢查 XIB 裡面的 View 是不是 UITableViewCell，若不是的話會吐 <code>NSInternalInconsistencyException</code></p>
+        <a href="https://blog.superbil.org/posts/init-uitableviewcell-problem-from-xib/" class="post-read-more">[閱讀全文]</a>
         
     </div>
 
@@ -300,7 +350,7 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 15, 2014
+  <i class="fas fa-calendar"></i>&nbsp;發表於 May 15, 2014
   
   
   
@@ -312,13 +362,45 @@ git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautif
     </p>
     <div class="post-entry">
         
-        備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭
-基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具
-經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣
-rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/backup/project/ 在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般 unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)
-依照官方說明，我就做了一個這樣的 plist 出來
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt; &lt;plist version=&#34;1.0&#34;&gt; &lt;dict&gt; &lt;key&gt;Debug&lt;/key&gt; &lt;true/&gt; &lt;key&gt;Label&lt;/key&gt; &lt;string&gt;org.superbil.rsync&lt;/string&gt; &lt;key&gt;ProgramArguments&lt;/key&gt; &lt;array&gt; &lt;string&gt;/usr/bin/rsync&lt;/string&gt; &lt;string&gt;-auzthv&lt;/string&gt; &lt;string&gt;--delete-after&lt;/string&gt; &lt;string&gt;--exclude-from=rsync_exclude&lt;/string&gt; &lt;string&gt;project/&lt;/string&gt; &lt;string&gt;/volumes/backup/project/&lt;/string&gt; &lt;/array&gt; &lt;key&gt;StandardErrorPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project.log&lt;/string&gt; &lt;key&gt;StandardOutPath&lt;/key&gt; &lt;string&gt;~/Library/Logs/rsync/project_err.log&lt;/string&gt; &lt;key&gt;StartCalendarInterval&lt;/key&gt; &lt;dict&gt; &lt;key&gt;Hour&lt;/key&gt; &lt;integer&gt;6&lt;/integer&gt; &lt;key&gt;Minute&lt;/key&gt; &lt;integer&gt;0&lt;/integer&gt; &lt;/dict&gt; &lt;/dict&gt; &lt;/plist&gt; 這個 plist， ProgramArguments 這項單行和多行都可以，launchd 會幫你組成一行。 StartCalendarInterval 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。
-        <a href="https://blog.superbil.org/posts/launchd-backup-with-rsync/" class="post-read-more">[Read More]</a>
+        <p>備份在現在是一件非常重要的事情，所以要把重要的東西備份，以免之後會哭哭</p>
+<p>基於 rsync 可以細微的調整，而且擴充性好很多，所以就用 rsync 來當作主要備份工具</p>
+<p>經過自己的需求和測試，目前自己使用的 rsync 大概會長這樣</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rsync -auzthv --exclude-from<span class="o">=</span>rsync_exclude --delete-after project/ /volumes/backup/project/
+</span></span></code></pre></div><p>在 Mac 上要能跑的東西目前有 cron 或是 launchd 這兩個方式，前面的是一般
+unix 常用的方式，基於要試新的玩意，就小玩了一下 launchd。(launchctl 是用來操作 launchd 用的命令列工具)</p>
+<p>依照<a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">官方說明</a>，我就做了一個這樣的 <a href="https://gist.github.com/Superbil/edb9701ef07df2e88091">plist</a> 出來</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>Debug<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;true/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>org.superbil.rsync<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>ProgramArguments<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;array&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>/usr/bin/rsync<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>-auzthv<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>--delete-after<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>--exclude-from=rsync_exclude<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>project/<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;string&gt;</span>/volumes/backup/project/<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/array&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>StandardErrorPath<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project.log<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>StandardOutPath<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>~/Library/Logs/rsync/project_err.log<span class="nt">&lt;/string&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>StartCalendarInterval<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dict&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>Hour<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>6<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;key&gt;</span>Minute<span class="nt">&lt;/key&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;integer&gt;</span>0<span class="nt">&lt;/integer&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
+</span></span></code></pre></div><p>這個 plist， <code>ProgramArguments</code> 這項單行和多行都可以，launchd 會幫你組成一行。 <code>StartCalendarInterval</code> 就是重復執行的時間間隔，這個跟 unix 習慣一樣，沒有輸入的值他會當通用批配值。</p>
+        <a href="https://blog.superbil.org/posts/launchd-backup-with-rsync/" class="post-read-more">[閱讀全文]</a>
         
     </div>
 
@@ -350,7 +432,7 @@ rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/back
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 3, 2014
+  <i class="fas fa-calendar"></i>&nbsp;發表於 January 3, 2014
   
   
   
@@ -397,7 +479,7 @@ rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/back
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 10, 2013
+  <i class="fas fa-calendar"></i>&nbsp;發表於 December 10, 2013
   
   
   
@@ -448,7 +530,7 @@ rsync -auzthv --exclude-from=rsync_exclude --delete-after project/ /volumes/back
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 19, 2013
+  <i class="fas fa-calendar"></i>&nbsp;發表於 November 19, 2013
   
   
   
@@ -507,7 +589,7 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 7, 2013
+  <i class="fas fa-calendar"></i>&nbsp;發表於 November 7, 2013
   
   
   
@@ -554,7 +636,7 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 5, 2013
+  <i class="fas fa-calendar"></i>&nbsp;發表於 September 5, 2013
   
   
   
@@ -575,7 +657,7 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="nb">NULL</span><span class="p">),</span> <span class="o">^</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// do some thing you want to ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span></code></pre></div>
         
     </div>
@@ -609,6 +691,10 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
         </ul>
         <p class="credits copyright text-muted">
           
+            
+              Superbil
+            
+          
 
           &nbsp;&bull;&nbsp;&copy;
           
@@ -622,7 +708,7 @@ PS. 也可以用 <code>brew --prefix emacs-clang-complete-async</code> 拿到路
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          由 <a href="https://gohugo.io">Hugo v0.165.0</a> 提供 &nbsp;&bull;&nbsp; 主題 <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> 移植自 <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           
         </p>
       </div>

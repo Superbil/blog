@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>xcode on Superbil.nil</title>
-    <link>https://blog.superbil.org/tags/xcode/</link>
-    <description>Recent content in xcode on Superbil.nil</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Thu, 07 Nov 2013 11:47:00 +0800</lastBuildDate><atom:link href="https://blog.superbil.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>sort Xcode project</title>
-      <link>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</link>
-      <pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
-      
-      <guid>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</guid>
-      <description>I found this perl script can sort Xcode Project
-sort-Xcode-project-file
-just download it and run it
-$ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file $ chmod +x sort-Xcode-project-file $ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj you need to change MyProject to you xcode project name</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Xcode on Superbil.nil</title>
+		<link>https://blog.superbil.org/tags/xcode/</link>
+		<description>Recent content in Xcode on Superbil.nil</description>
+		<generator>Hugo</generator>
+		<language>zh-tw</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 07 Nov 2013 11:47:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://blog.superbil.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>sort Xcode project</title>
+				<link>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</link>
+				<pubDate>Thu, 07 Nov 2013 11:47:00 +0800</pubDate>
+				<guid>https://blog.superbil.org/posts/sort-xcode-project-file-and-directory/</guid>
+				<description>&lt;p&gt;I found this perl script can sort Xcode Project&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/WebKit/webkit/blob/master/Tools/Scripts/sort-Xcode-project-file&#34;&gt;sort-Xcode-project-file&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;just download it and run it&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -O https://raw.github.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ chmod +x sort-Xcode-project-file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./sort-Xcode-project-file MyProject.xcodeproj/project.pbxproj&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you need to change MyProject to you xcode project name&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
