@@ -1,11 +1,10 @@
 baseURL = "https://blog.superbil.org/"
-languageCode = "zh-tw"
+locale = "zh-tw"
 title = "Superbil.nil"
 publishDir = "docs"
 theme = "beautifulhugo"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
-disqusShortname = "superbil-nil"
 
 SectionPagesMenu = "main"
 [[menu.main]]
@@ -19,7 +18,6 @@ SectionPagesMenu = "main"
     url = "/tags/"
 
 [params]
-  author = "Superbil"
   isCJKLanguage = true
   languageCode = "zh-tw"           # Use for RSS
   copyright = "![Creative Commons License](http://i.creativecommons.org/l/by-nc-sa/2.5/tw/88x31.png)"
@@ -31,3 +29,9 @@ SectionPagesMenu = "main"
   useHLJS = true
   hideAuthor = true
   googleTagManager = "G-1HEMVG7BY3"
+
+[params.author]
+  name = "Superbil"
+
+[services.disqus]
+  shortname = "superbil-nil"
